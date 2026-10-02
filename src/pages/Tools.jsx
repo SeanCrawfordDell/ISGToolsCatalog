@@ -7,6 +7,7 @@ import StatusBadge from '../components/tools/StatusBadge';
 import { githubIssueFormUrl } from '../utils/githubLinks';
 
 const REGION_OPTIONS = ['North America', 'EMEA', 'LATAM', 'ANZ', 'APJ'];
+const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local'];
 
 const Tools = () => {
   const { tools, filteredTools, loading, filters, sortBy, setSortBy, updateFilters, clearFilters } = useTools();
@@ -48,7 +49,7 @@ const Tools = () => {
             
             {/* Search and Filters */}
             <div className="card mb-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Search
@@ -89,7 +90,15 @@ const Tools = () => {
                     {REGION_OPTIONS.map(region => <option key={region} value={region}>{region}</option>)}
                   </select>
                 </div>
-                
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Operating System</label>
+                  <select value={filters.operatingSystem} onChange={(e) => updateFilters({ operatingSystem: e.target.value })} className="input-field">
+                    <option value="">All Operating Systems</option>
+                    {OPERATING_SYSTEM_OPTIONS.map(os => <option key={os} value={os}>{os}</option>)}
+                  </select>
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Sort By
@@ -157,7 +166,7 @@ const Tools = () => {
                 </div>
               </section>
               
-              {(filters.search || filters.status || filters.regionCreated || filters.category) && (
+              {(filters.search || filters.status || filters.regionCreated || filters.category || filters.operatingSystem) && (
                 <button
                   onClick={clearFilters}
                   className="mt-4 text-sm text-dell-blue hover:underline"

@@ -23,6 +23,9 @@ export const filterTools = (tools, filters) => {
       const hasTag = filters.tags.some(tag => tool.tags.includes(tag));
       if (!hasTag) return false;
     }
+    if (filters.operatingSystem && !tool.operatingSystem.includes(filters.operatingSystem)) {
+      return false;
+    }
     return true;
   });
 };

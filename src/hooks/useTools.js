@@ -11,7 +11,8 @@ export const useTools = () => {
     status: '',
     regionCreated: '',
     category: '',
-    tags: []
+    tags: [],
+    operatingSystem: ''
   });
   const [sortBy, setSortBy] = useState('date');
 
@@ -47,7 +48,8 @@ export const useTools = () => {
       status: '',
       regionCreated: '',
       category: '',
-      tags: []
+      tags: [],
+      operatingSystem: ''
     });
   };
 

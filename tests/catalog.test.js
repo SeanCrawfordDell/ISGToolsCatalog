@@ -94,3 +94,17 @@ Key benefits include:
 
 By automating switch Log Collection and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.`);
 });
+
+test('operating system filter works correctly', async () => {
+  const tools = await loadTools();
+  const azureLocalTools = filterTools(tools, { operatingSystem: 'Azure Local' });
+  assert.ok(azureLocalTools.length > 0, 'Should find tools with Azure Local');
+  assert.ok(azureLocalTools.every(tool => tool.operatingSystem.includes('Azure Local')), 'All results should include Azure Local');
+  
+  const windowsTools = filterTools(tools, { operatingSystem: 'Windows' });
+  assert.ok(windowsTools.length > 0, 'Should find tools with Windows');
+  assert.ok(windowsTools.every(tool => tool.operatingSystem.includes('Windows')), 'All results should include Windows');
+  
+  const linuxTools = filterTools(tools, { operatingSystem: 'Linux' });
+  assert.equal(linuxTools.length, 0, 'Should find no tools with Linux currently');
+});
