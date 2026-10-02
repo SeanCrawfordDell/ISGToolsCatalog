@@ -32,7 +32,13 @@
         "launcher",
         "utilities",
         "powershell",
-        "dell"
+        "dell",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Tool Access",
       "regionCreated": "North America",
@@ -112,7 +118,13 @@
         "windows-update",
         "servicing",
         "dism",
-        "troubleshooting"
+        "troubleshooting",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Log Analysis",
       "regionCreated": "North America",
@@ -159,7 +171,13 @@
         "firmware",
         "drivers",
         "cluster",
-        "automation"
+        "automation",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Updates & Maintenance",
       "regionCreated": "North America",
@@ -199,7 +217,13 @@
         "event-logs",
         "filtering",
         "troubleshooting",
-        "storage"
+        "storage",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Log Analysis",
       "regionCreated": "North America",
@@ -233,7 +257,13 @@
         "hyper-v",
         "performance",
         "bottlenecks",
-        "virtualization"
+        "virtualization",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Performance Analysis",
       "regionCreated": "North America",
@@ -347,7 +377,13 @@
         "logs",
         "collection",
         "diagnostics",
-        "troubleshooting"
+        "troubleshooting",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Diagnostic Collection",
       "regionCreated": "North America",
@@ -381,7 +417,13 @@
         "switches",
         "diagnostics",
         "networking",
-        "dell"
+        "dell",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Diagnostic Collection",
       "regionCreated": "North America",
@@ -415,7 +457,13 @@
         "sddc",
         "azure-stack-hci",
         "diagnostics",
-        "collection"
+        "collection",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Diagnostic Collection",
       "regionCreated": "North America",
@@ -449,7 +497,13 @@
         "sddc",
         "offline",
         "air-gapped",
-        "diagnostics"
+        "diagnostics",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Diagnostic Collection",
       "regionCreated": "North America",
@@ -483,7 +537,13 @@
         "tsr",
         "cluster",
         "idrac",
-        "diagnostics"
+        "diagnostics",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Diagnostic Collection",
       "regionCreated": "North America",
@@ -529,7 +589,13 @@
         "azure-local",
         "health-checks",
         "validation",
-        "cluster"
+        "cluster",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Health & Validation",
       "regionCreated": "North America",
@@ -563,7 +629,13 @@
         "filter-drivers",
         "file-system",
         "troubleshooting",
-        "windows"
+        "windows",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Driver Diagnostics",
       "regionCreated": "North America",
@@ -629,7 +701,13 @@
         "validation",
         "s2d",
         "azure-local",
-        "log-collection"
+        "log-collection",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Cluster Diagnostics",
       "regionCreated": "North America",
@@ -669,7 +747,13 @@
         "monitoring",
         "alerting",
         "health-checks",
-        "dashboard"
+        "dashboard",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Monitoring",
       "regionCreated": "North America",
@@ -695,7 +779,13 @@
         "disaster-recovery",
         "access-control",
         "infrastructure",
-        "security"
+        "security",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "roadmap": [],
       "category": "Log Analysis",
@@ -728,7 +818,12 @@
         "DISM",
         "Windows Server",
         "Log Analysis",
-        "Troubleshooting"
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
       ],
       "category": "Log Analysis",
       "regionCreated": "APJ",
