@@ -17,7 +17,7 @@ test('catalog records Windows Update Investigator as an APJ internal-testing pro
   assert.equal(tool.documentation, '');
   assert.equal(tool.telemetryName, 'Windows Update Investigator');
   assert.deepEqual(tool.tags, [
-    'Windows Update', 'Dell TSS', 'Devin CLI', 'PowerShell', 'CBS', 'DISM',
+    'Windows Update', 'Dell TSS', 'PowerShell', 'CBS', 'DISM',
     'Windows Server', 'Log Analysis', 'Orchestration', 'Log Collection',
     'Troubleshooting', 'Telemetry', 'Diagnostic', 'Action Plan'
   ]);
