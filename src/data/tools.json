@@ -121,7 +121,6 @@
         "windows-update",
         "servicing",
         "dism",
-        "troubleshooting",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -221,7 +220,6 @@
       "tags": [
         "event-logs",
         "filtering",
-        "troubleshooting",
         "storage",
         "Orchestration",
         "Log Collection",
@@ -302,7 +300,6 @@
       ],
       "tags": [
         "idrac",
-        "management",
         "gui",
         "dell-servers"
       ],
@@ -384,8 +381,6 @@
       "tags": [
         "logs",
         "collection",
-        "diagnostics",
-        "troubleshooting",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -424,7 +419,6 @@
       ],
       "tags": [
         "switches",
-        "diagnostics",
         "networking",
         "dell",
         "Orchestration",
@@ -466,7 +460,6 @@
       "tags": [
         "sddc",
         "azure-stack-hci",
-        "diagnostics",
         "collection",
         "Orchestration",
         "Log Collection",
@@ -508,7 +501,6 @@
         "sddc",
         "offline",
         "air-gapped",
-        "diagnostics",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -549,7 +541,6 @@
         "tsr",
         "cluster",
         "idrac",
-        "diagnostics",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -642,7 +633,6 @@
       "tags": [
         "filter-drivers",
         "file-system",
-        "troubleshooting",
         "windows",
         "Orchestration",
         "Log Collection",
@@ -711,13 +701,10 @@
       "roadmap": [],
       "tags": [
         "powershell",
-        "diagnostics",
-        "troubleshooting",
         "parser",
         "validation",
         "s2d",
         "azure-local",
-        "log-collection",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",

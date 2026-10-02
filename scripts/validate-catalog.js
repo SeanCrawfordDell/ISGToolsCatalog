@@ -20,6 +20,11 @@ try {
     if (!Number.isFinite(tool.minutesSavedPerRun) || tool.minutesSavedPerRun < 0) throw new Error(`${tool.id}: invalid minutesSavedPerRun`);
     if (!Array.isArray(tool.operatingSystem) || !tool.operatingSystem.length || !tool.operatingSystem.every(os => typeof os === 'string' && os.trim())) throw new Error(`${tool.id}: operatingSystem must be a non-empty array of strings`);
     if (!Array.isArray(tool.tags) || !tool.tags.every(tag => typeof tag === 'string') || !Array.isArray(tool.roadmap)) throw new Error(`${tool.id}: tags and roadmap must be arrays`);
+    const tagLower = new Set();
+    for (const tag of tool.tags) {
+      if (tagLower.has(tag.toLowerCase())) throw new Error(`${tool.id}: duplicate tag (case-insensitive): ${tag}`);
+      tagLower.add(tag.toLowerCase());
+    }
     for (const field of ['repository', 'documentation']) {
       if (!tool[field]) continue;
       const url = new URL(tool[field]);
