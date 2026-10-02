@@ -295,9 +295,12 @@ const ToolDetail = () => {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                   {tool.name}
                 </h1>
-                <div className="flex items-center space-x-4">
+                <div className="flex flex-wrap items-center gap-4">
                   <StatusBadge status={tool.status} />
                   <span className="text-gray-600 dark:text-gray-400">Created in: {tool.regionCreated}</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Operating System: {tool.operatingSystem.join(', ')}
+                  </span>
                 </div>
               </div>
             </div>

@@ -198,7 +198,10 @@ const Tools = () => {
                           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                             {tool.name}
                           </h3>
-                          <span className="mt-1 inline-block text-sm text-dell-blue dark:text-blue-300">{tool.category}</span>
+                          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm text-dell-blue dark:text-blue-300">
+                            <span>{tool.category}</span>
+                            <span>Operating System: {tool.operatingSystem.join(', ')}</span>
+                          </div>
                         </div>
                         <StatusBadge status={tool.status} />
                       </div>
