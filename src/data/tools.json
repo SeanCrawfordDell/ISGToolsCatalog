@@ -76,7 +76,7 @@
         "firewall",
         "networking"
       ],
-      "category": "Connectivity",
+      "category": "Utility",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "AzHCIUrlChecker",
@@ -334,7 +334,7 @@
         "paste",
         "gui"
       ],
-      "category": "Other",
+      "category": "Utility",
       "regionCreated": "North America",
       "minutesSavedPerRun": 10,
       "telemetryName": "KeyRelay",
@@ -820,13 +820,12 @@
         "Windows Server",
         "Log Collection",
         "Orchestration",
-        "Log Collection",
         "Troubleshooting",
         "Telemetry",
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Log Collection",
+      "category": "Diagnostics",
       "regionCreated": "APJ",
       "minutesSavedPerRun": 0,
       "telemetryName": "Windows Update Investigator",
