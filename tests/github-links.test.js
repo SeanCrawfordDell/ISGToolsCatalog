@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { githubToolChangeProposalUrl } from '../src/utils/githubLinks.js';
+import { githubToolUpdateUrl } from '../src/utils/githubLinks.js';
 
-test('tool change proposals preserve metadata and use the proposed catalog fields', () => {
+test('tool update links preserve the current catalog fields', () => {
   const tool = {
     id: 'tool-001',
     name: 'Example Tool',
@@ -18,12 +18,7 @@ test('tool change proposals preserve metadata and use the proposed catalog field
     valueProposition: 'Current value',
     tags: ['current']
   };
-  const url = new URL(githubToolChangeProposalUrl(tool, {
-    description: 'Proposed description',
-    overview: 'Proposed overview',
-    valueProposition: 'Proposed value',
-    tags: ['proposed', 'catalog']
-  }));
+  const url = new URL(githubToolUpdateUrl(tool));
 
   assert.equal(url.searchParams.get('template'), 'tool_update.md');
   assert.equal(url.searchParams.get('title'), 'Catalog update: Example Tool');
@@ -37,17 +32,17 @@ test('tool change proposals preserve metadata and use the proposed catalog field
 - **Progress**: 100%
 - **Repository**: https://example.test/repository
 - **Documentation**: https://example.test/documentation
-- **Tags**: proposed, catalog
+- **Tags**: current
 
 ## Description
 
-Proposed description
+Current description
 
 ## Overview
 
-Proposed overview
+Current overview
 
 ## Value proposition
 
-Proposed value`);
+Current value`);
 });

@@ -47,5 +47,3 @@ ${valueProposition}`;
 };
 
 export const githubToolUpdateUrl = (tool) => toolUpdateIssueUrl(tool);
-
-export const githubToolChangeProposalUrl = (tool, changes) => toolUpdateIssueUrl(tool, changes);

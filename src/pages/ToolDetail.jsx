@@ -11,7 +11,7 @@ import StatusBadge from '../components/tools/StatusBadge';
 import { formatDate } from '../utils/dataHelpers';
 import { getToolTelemetry } from '../services/telemetryApi';
 import { getToolInstructions, README_URL } from '../services/githubDocumentation';
-import { githubIssueFormUrl, githubToolChangeProposalUrl } from '../utils/githubLinks';
+import { githubIssueFormUrl } from '../utils/githubLinks';
 import { createEndpointPreservingTickCallback } from '../utils/chartTicks';
 import { formatReportMonth as formatMonth } from '../utils/reportFormatting';
 import { Chart } from 'react-chartjs-2';
@@ -203,8 +203,6 @@ const ToolDetail = () => {
   const [instructions, setInstructions] = useState(null);
   const [instructionsLoading, setInstructionsLoading] = useState(false);
   const [instructionsError, setInstructionsError] = useState(null);
-  const [proposalOpen, setProposalOpen] = useState(false);
-  const [proposal, setProposal] = useState(null);
 
   useEffect(() => {
     const fetchTool = async () => {
@@ -280,21 +278,6 @@ const ToolDetail = () => {
     return colors[priority] || 'text-gray-500';
   };
 
-  const openProposal = () => {
-    setProposal({
-      description: tool.description,
-      overview: tool.whatItDoes,
-      valueProposition: tool.valueProposition,
-      tags: tool.tags.join(', ')
-    });
-    setProposalOpen(true);
-  };
-
-  const submitProposal = (event) => {
-    event.preventDefault();
-    const tags = proposal.tags.split(',').map(tag => tag.trim()).filter(Boolean);
-    window.open(githubToolChangeProposalUrl(tool, { ...proposal, tags }), '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -391,41 +374,7 @@ const ToolDetail = () => {
                   <a href={githubIssueFormUrl('feature', tool.name)} target="_blank" rel="noopener noreferrer" className="btn-primary">
                     Feature Request
                   </a>
-                  <button type="button" onClick={openProposal} className="btn-secondary">
-                    Propose Changes
-                  </button>
                 </div>
-                {proposalOpen && proposal && (
-                  <form onSubmit={submitProposal} className="mt-6 rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-600 dark:bg-gray-800">
-                    <div className="mb-5 flex items-start justify-between gap-4">
-                      <div>
-                        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Propose catalog changes</h2>
-                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Your proposal opens as a GitHub request for maintainer review; it does not change the published catalog directly.</p>
-                      </div>
-                      <button type="button" onClick={() => setProposalOpen(false)} className="text-sm font-medium text-dell-blue hover:underline">Cancel</button>
-                    </div>
-                    <div className="space-y-4">
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Description
-                        <textarea value={proposal.description} onChange={event => setProposal({ ...proposal, description: event.target.value })} rows="4" required className="mt-1 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white" />
-                      </label>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Overview
-                        <textarea value={proposal.overview} onChange={event => setProposal({ ...proposal, overview: event.target.value })} rows="6" required className="mt-1 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white" />
-                      </label>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Value Proposition
-                        <textarea value={proposal.valueProposition} onChange={event => setProposal({ ...proposal, valueProposition: event.target.value })} rows="6" required className="mt-1 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white" />
-                      </label>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                        Tags
-                        <input value={proposal.tags} onChange={event => setProposal({ ...proposal, tags: event.target.value })} required className="mt-1 w-full rounded border border-gray-300 bg-white p-2 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white" />
-                        <span className="mt-1 block text-xs font-normal text-gray-500 dark:text-gray-400">Separate tags with commas.</span>
-                      </label>
-                    </div>
-                    <button type="submit" className="btn-primary mt-5">Open GitHub Proposal</button>
-                  </form>
-                )}
               </div>
 
               <div>
