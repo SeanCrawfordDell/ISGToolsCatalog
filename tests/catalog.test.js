@@ -73,7 +73,7 @@ By automating firmware and driver validation, Drift helps support engineers quic
 
 test('SLIC description and details use the approved wording', async () => {
   const slic = (await loadTools()).find(item => item.name === 'SLIC');
-  assert.equal(slic.description, `SLIC is a Dell switch log analysis tool designed for Azure Local environments. It parses Dell switch logs, validates switch configurations against Azure Local recommended settings, and generates a detailed HTML report for troubleshooting and compliance review.`);
+  assert.equal(slic.description, `SLIC is a Dell switch Log Collection tool designed for Azure Local environments. It parses Dell switch logs, validates switch configurations against Azure Local recommended settings, and generates a detailed HTML report for troubleshooting and compliance review.`);
   assert.equal(slic.whatItDoes, `- Reads and analyzes raw Dell switch log files.
 - Extracts key events, errors, warnings, and operational status information.
 - Compares switch configurations against Azure Local validated and recommended settings.
@@ -92,5 +92,5 @@ Key benefits include:
 
 #### Business Impact
 
-By automating switch log analysis and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.`);
+By automating switch Log Collection and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.`);
 });

@@ -99,7 +99,7 @@
       "updatedAt": "2024-09-15",
       "roadmap": [
         {
-          "feature": "CBS/DISM log analysis",
+          "feature": "CBS/DISM Log Collection",
           "status": "completed",
           "targetDate": "2022-01-01",
           "priority": "high"
@@ -128,7 +128,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Log Analysis",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 60,
       "telemetryName": "BOILER",
@@ -228,7 +228,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Log Analysis",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "FLEP",
@@ -768,9 +768,9 @@
       "id": "tool-019",
       "name": "SLIC",
       "operatingSystem": ["Windows"],
-      "description": "SLIC is a Dell switch log analysis tool designed for Azure Local environments. It parses Dell switch logs, validates switch configurations against Azure Local recommended settings, and generates a detailed HTML report for troubleshooting and compliance review.",
+      "description": "SLIC is a Dell switch Log Collection tool designed for Azure Local environments. It parses Dell switch logs, validates switch configurations against Azure Local recommended settings, and generates a detailed HTML report for troubleshooting and compliance review.",
       "whatItDoes": "- Reads and analyzes raw Dell switch log files.\n- Extracts key events, errors, warnings, and operational status information.\n- Compares switch configurations against Azure Local validated and recommended settings.\n- Identifies configuration drift, misconfigurations, and compliance gaps.\n- Generates a clear, easy-to-read HTML report with summarized findings, tables, and visualizations where applicable.",
-      "valueProposition": "SLIC significantly reduces the time and effort required to review and validate switch configurations in Azure Local deployments.\n\nKey benefits include:\n\n- Automates the analysis of large and complex switch log files.\n- Quickly identifies configuration issues and deviations from validated Azure Local standards.\n- Produces a shareable HTML report that simplifies troubleshooting and customer communication.\n- Helps administrators and support engineers detect critical events, errors, and warnings that might otherwise be overlooked.\n- Improves operational consistency by validating network configurations against known best practices.\n- Accelerates root cause analysis and reduces troubleshooting time during support engagements.\n\n#### Business Impact\n\nBy automating switch log analysis and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.",
+      "valueProposition": "SLIC significantly reduces the time and effort required to review and validate switch configurations in Azure Local deployments.\n\nKey benefits include:\n\n- Automates the analysis of large and complex switch log files.\n- Quickly identifies configuration issues and deviations from validated Azure Local standards.\n- Produces a shareable HTML report that simplifies troubleshooting and customer communication.\n- Helps administrators and support engineers detect critical events, errors, and warnings that might otherwise be overlooked.\n- Improves operational consistency by validating network configurations against known best practices.\n- Accelerates root cause analysis and reduces troubleshooting time during support engagements.\n\n#### Business Impact\n\nBy automating switch Log Collection and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.",
       "status": "released",
       "progress": 100,
       "owner": "Jim Gandy",
@@ -792,7 +792,7 @@
         "Action Plan"
       ],
       "roadmap": [],
-      "category": "Log Analysis",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "SLIC",
@@ -821,7 +821,7 @@
         "CBS",
         "DISM",
         "Windows Server",
-        "Log Analysis",
+        "Log Collection",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -829,7 +829,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Log Analysis",
+      "category": "Log Collection",
       "regionCreated": "APJ",
       "minutesSavedPerRun": 0,
       "telemetryName": "Windows Update Investigator",
