@@ -14,7 +14,11 @@ export const githubStatusChangeUrl = `${repositoryUrl}/issues/new?template=tool_
 
 export const githubNewToolRequestUrl = `${repositoryUrl}/issues/new?template=new_tool.md&title=${encodeURIComponent('New tool request')}`;
 
-export const githubToolUpdateUrl = (tool) => {
+const toolUpdateIssueUrl = (tool, changes = {}) => {
+  const description = changes.description ?? tool.description;
+  const overview = changes.overview ?? tool.whatItDoes;
+  const valueProposition = changes.valueProposition ?? tool.valueProposition;
+  const tags = changes.tags ?? tool.tags;
   const body = `## Tool update
 
 - **Tool ID**: ${tool.id}
@@ -25,19 +29,23 @@ export const githubToolUpdateUrl = (tool) => {
 - **Progress**: ${typeof tool.progress === 'number' ? `${tool.progress}%` : tool.progress || 'Not provided'}
 - **Repository**: ${tool.repository || 'Not provided'}
 - **Documentation**: ${tool.documentation || 'Not provided'}
-- **Tags**: ${(Array.isArray(tool.tags) ? tool.tags.join(', ') : tool.tags) || 'Not provided'}
+- **Tags**: ${(Array.isArray(tags) ? tags.join(', ') : tags) || 'Not provided'}
 
 ## Description
 
-${tool.description}
+${description}
 
 ## Overview
 
-${tool.whatItDoes}
+${overview}
 
 ## Value proposition
 
-${tool.valueProposition}`;
+${valueProposition}`;
 
   return `${repositoryUrl}/issues/new?template=tool_update.md&title=${encodeURIComponent(`Catalog update: ${tool.name}`)}&body=${encodeURIComponent(body)}`;
 };
+
+export const githubToolUpdateUrl = (tool) => toolUpdateIssueUrl(tool);
+
+export const githubToolChangeProposalUrl = (tool, changes) => toolUpdateIssueUrl(tool, changes);
