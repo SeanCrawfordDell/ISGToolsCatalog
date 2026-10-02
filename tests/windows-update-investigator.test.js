@@ -92,8 +92,7 @@ test('Internal Testing appears as a distinct status and counts as testing work',
     total: 1,
     byStatus: { 'internal-testing': 1 },
     inDevelopment: 1,
-    released: 0,
-    testing: 1
+    released: 0
   });
 });
 

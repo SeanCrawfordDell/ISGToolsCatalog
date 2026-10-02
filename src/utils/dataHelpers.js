@@ -75,8 +75,7 @@ export const calculateStats = (tools) => {
     total: tools.length,
     byStatus: {},
     inDevelopment: 0,
-    released: 0,
-    testing: 0
+    released: 0
   };
 
   tools.forEach(tool => {
@@ -91,11 +90,6 @@ export const calculateStats = (tools) => {
     // Released count
     if (tool.status === 'released') {
       stats.released++;
-    }
-
-    // Testing count
-    if (tool.status === 'testing' || tool.status === 'internal-testing') {
-      stats.testing++;
     }
   });
 
