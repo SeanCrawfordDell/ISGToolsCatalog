@@ -19,18 +19,6 @@ Each tool contains:
 
 `npm run validate:catalog` checks unique IDs, required fields, status, percentage or named-stage progress, estimates, arrays, and URL syntax. The build runs this validation automatically; it does not validate external URL availability or tool business facts.
 
-## Development and verification
-
-Use Node.js 24 LTS and npm.
-
-```sh
-npm ci
-npm run dev
-npm test
-npm run lint
-npm run build
-npm run preview
-```
 
 Tests cover catalog reconciliation, build validation, initial telemetry loading, cancellation, late responses, and unavailable results. Lint targets source, tests, scripts, and configuration, not compiled bundles.
 
@@ -57,16 +45,3 @@ The site does not edit the repository directly and does not require a browser to
 ## Telemetry
 
 `src/services/telemetryApi.js` reads the existing Azure telemetry summary endpoint. Reports use estimated minutes per run to calculate hours saved. Failed requests display an unavailable state; changing tools cancels obsolete report requests and prevents late responses from replacing the selected report.
-
-## September 2026 cleanup and reconciliation
-
-The pre-cleanup snapshot is commit `2bcc5ac8368dac68d1077c224506d8edaa0767a9`. A full Git bundle backup with restore instructions was created and restored successfully before editing. Git history also retains all removed tracked files.
-
-- Preserved all 18 active catalog records and their IDs, descriptions, statuses, and progress.
-- Carried the September 23 root-JSON owner edits for DART, TALI, and iDRAC Connection Manager into the active catalog: Jim Gandy.
-- Added the previously unused SLIC record as `tool-019`, retaining its supplied status (testing), progress (75%), owner, dates, team, and tags. Corrected its malformed Markdown-in-URL strings to the intended GSE Tools repository. Assigned Log Analysis and the existing North America/30-minute defaults; those classifications and the inherited tags/estimates can be reviewed in the JSON.
-- Retained the current DriFT record as testing/85%; cleanup does not reinterpret a commit title as approval to change its lifecycle status.
-- Removed old JSON copies, embedded sample requests, disabled browser GitHub API code, the demo password gate, unused starter assets, old build locations, and generated Graphify analysis output.
-- Consolidated categories, regions, documentation anchors, and report defaults into the catalog. The iDRAC report now uses its intended 10-minute default rather than the old name-mismatch fallback.
-
-The old root-JSON IDs referred to different tools and included a duplicate `tool-008`. They were not copied over the active IDs. Older placeholder descriptions/statuses were not allowed to overwrite the active catalog; the full original files remain recoverable from the backup and Git history.
