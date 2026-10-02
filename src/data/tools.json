@@ -830,6 +830,43 @@
       "minutesSavedPerRun": 0,
       "telemetryName": "Windows Update Investigator",
       "documentationAnchor": null
+    },
+    {
+      "id": "tool-021",
+      "name": "OME Built-In Account Reset",
+      "operatingSystem": ["Windows"],
+      "description": "Script to reset the OpenManage Enterprise (OME) built-in admin account password using the OME API.",
+      "whatItDoes": "The script leverages either a local OME administrator account or a domain account with administrative privileges to reset the built-in admin account password. When executed, the script prompts for:\n\n- The IP address or FQDN of the OpenManage Enterprise (OME) appliance\n- A username and password with administrative rights on OME\n- A new password for the built-in admin account\n\nTo help prevent input errors, the new password is displayed in plain text for verification before the reset is performed. After successfully logging in with the reset admin account, the password can be changed through the OME user interface to a different secure value if desired.",
+      "valueProposition": "OpenManage Enterprise requires the built-in admin account to perform native backup and restore operations. If the password for this account is lost, current OME documentation recommends redeploying the appliance.\n\nThis script provides an alternative recovery method by leveraging the OME API to reset the built-in admin account password to a known value. As a result, administrators can regain access to the account and continue using backup and restore functionality without the time and effort associated with deploying a new OME appliance.\n\nKey Benefits:\n\n- Avoids a full OME appliance redeployment when the built-in admin password is lost\n- Enables recovery of the account using an existing administrator-level OME account\n- Restores access to native backup and restore functionality\n- Reduces operational downtime and administrative overhead\n- Provides a repeatable, automated recovery process using supported OME API functionality",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2026-10-02",
+      "updatedAt": "2026-10-02",
+      "roadmap": [
+        {
+          "feature": "OME API-based password reset",
+          "status": "completed",
+          "targetDate": "2026-10-02",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "utility",
+        "ome",
+        "openmanage",
+        "password-reset",
+        "api",
+        "recovery"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 120,
+      "telemetryName": "OME Built-In Account Reset",
+      "documentationAnchor": null
     }
   ]
 }
