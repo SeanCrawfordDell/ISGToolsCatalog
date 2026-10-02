@@ -609,9 +609,9 @@
     {
       "id": "tool-017",
       "name": "CluChk",
-      "description": "Automated validator for Storage Spaces Direct and Azure Local clusters that checks configurations against industry best practices.",
-      "whatItDoes": "Scans S2D and Azure Local cluster configurations against Microsoft and Dell best practices, extracts actionable errors and warnings from cluster logs, evaluates storage, networking, and hardware health, and provides guided troubleshooting context for support engineers.",
-      "valueProposition": "Significantly reduces mean time to resolution for Dell and Microsoft support teams by automating manual log analysis and configuration checks. It identifies misconfigurations, storage-health risks, and system bottlenecks before they escalate, helping prevent downtime and diagnostic errors.",
+      "description": "CluChk (Cluster Checker) is a comprehensive PowerShell diagnostic analysis tool for Dell S2D Ready Node and Azure Local deployments. It processes multiple types of diagnostic logs—including Show Tech-Support, Support Assist collections, SDDC and performance reports—to generate interactive HTML reports that validate deployment compliance against Dell's official deployment guides.",
+      "whatItDoes": "CluChk is a multi-mode diagnostic processor that can analyze:\n\n- Show Tech-Support logs from Dell switches\n- Support Assist collections (TSR) from Dell servers\n- SDDC diagnostic packages from Azure Stack HCI/Azure Local clusters\n- Performance reports from S2D/HCI environments\n\nKey Features:\n\n- Combined report generation (Configuration + Performance in single HTML)\n- Batch processing of multiple log sources\n- Intelligent Log Extraction (automatic ZIP extraction, handles complex SDDC bundle structures, path junction creation for long path handling >90 characters, SDDC log reorganization from nested structures)\n- Real-Time Validation (fetches latest Dell Support Matrix from GitHub dell/azurestack-docs, falls back through N-1, N-2 versions if current version doesn't match, validates firmware/driver versions against official support matrix, detects Azure Local vs Azure Stack HCI vs generic WSFC environments)\n- AI-Enhanced Analysis (AI-powered troubleshooting summaries, focused analysis on RED/severity issues, recommended order of work prioritization, detailed authentication and CLI detection logging)",
+      "valueProposition": "Rapid Triage: Single tool consolidates multiple diagnostic sources into one actionable report\n\nValidation Automation: Eliminates manual cross-referencing against support matrices\n\nConsistency: Standardized analysis across all cases reduces human error\n\nEfficiency: Combined Configuration + Performance reports in one pass",
       "status": "released",
       "progress": 100,
       "owner": "Microsoft DE",
@@ -628,7 +628,8 @@
         "parser",
         "validation",
         "s2d",
-        "azure-local"
+        "azure-local",
+        "log-collection"
       ],
       "category": "Cluster Diagnostics",
       "regionCreated": "North America",
