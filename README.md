@@ -2,7 +2,7 @@
 
 React/Vite catalog for Dell technical support tools, GitHub request submissions, and telemetry reports.
 
-[Open the catalog](https://seancrawforddell.github.io/DellSupportoolRepository/)
+[Open the catalog](https://pages.eos2git.cec.lab.emc.com/Sean-Crawford/ISGToolsCatalog/)
 
 ## Edit the catalog
 
@@ -34,17 +34,17 @@ npm run preview
 
 Tests cover catalog reconciliation, build validation, initial telemetry loading, cancellation, late responses, and unavailable results. Lint targets source, tests, scripts, and configuration, not compiled bundles.
 
-The application uses hash routes (`#/tools`, `#/reports`, `#/requests`, `#/admin`) so direct links work with GitHub Pages. The retained `/admin` route now provides catalog update links; GitHub handles authentication and request management.
+The application uses hash routes (`#/tools`, `#/reports`, `#/requests`, `#/admin`) so direct links work with EOS GitHub Pages. The retained `/admin` route now provides catalog update links; GitHub handles authentication and request management.
 
 ## Deployment
 
-The Vite production base is `/DellSupportoolRepository/`, and the build output is **`docs/`**. This repository retains its current Pages deployment layout.
+Set `VITE_PUBLIC_BASE=/Sean-Crawford/ISGToolsCatalog/` when building for EOS GitHub Pages. The build output is **`docs/`**, which the configured Pages branch publishes.
 
 1. Update source files or `src/data/tools.json`.
 2. Run `npm test`, `npm run lint`, and `npm run build`.
 3. Preview and check the affected routes.
 4. Commit source changes and the regenerated `docs/` together.
-5. Review and merge through the normal repository workflow. GitHub Pages publishes the configured branch's `/docs` output.
+5. Review and merge through the normal repository workflow. EOS GitHub Pages publishes the configured branch's `/docs` output.
 
 Do not manually edit `docs/`, put compiled JavaScript under `public/`, or restore the old root `assets/`, root `data/`, or `dist/` folders. Vite copies `public/` into the build; it should contain only static assets such as `favicon.svg`.
 
