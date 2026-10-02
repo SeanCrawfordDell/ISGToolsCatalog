@@ -40,7 +40,7 @@ const Home = () => {
                   View Reports
                 </Link>
                 <Link to="/requests" className="btn-secondary bg-transparent border-2 border-white text-white hover:bg-white hover:text-dell-blue">
-                  Submit Request or Bug
+                  Submit Feedback or Enhancement
                 </Link>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Home = () => {
                 View Reports
               </Link>
               <Link to="/requests" className="btn-secondary">
-                Submit Request or Bug
+                Submit Feedback or Enhancement
               </Link>
             </div>
           </div>

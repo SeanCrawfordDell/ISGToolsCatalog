@@ -30,7 +30,7 @@ const Header = () => {
               Reporting
             </Link>
             <Link to="/requests" className="text-gray-700 dark:text-gray-300 hover:text-dell-blue dark:hover:text-dell-blue px-3 py-2 rounded-md font-medium">
-              Requests & Bugs
+              Feedback & Enhancements
             </Link>
           </nav>
 
