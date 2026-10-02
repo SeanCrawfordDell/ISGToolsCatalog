@@ -38,10 +38,10 @@
         "Log Collection",
         "Troubleshooting",
         "Telemetry",
-        "Diagnostic",
+        "Diagnostics",
         "Action Plan"
       ],
-      "category": "Other",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "Dell ProSupport ToolBox",
@@ -119,8 +119,6 @@
       ],
       "tags": [
         "windows-update",
-        "servicing",
-        "dism",
         "Orchestration",
         "Log Collection",
         "Troubleshooting",
@@ -128,7 +126,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Log Collection",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 60,
       "telemetryName": "BOILER",
@@ -176,10 +174,9 @@
         "cluster",
         "automation",
         "Orchestration",
-        "Log Collection",
         "Troubleshooting",
         "Telemetry",
-        "Diagnostic",
+        "Diagnostics",
         "Action Plan"
       ],
       "category": "Updates & Maintenance",
@@ -225,10 +222,10 @@
         "Log Collection",
         "Troubleshooting",
         "Telemetry",
-        "Diagnostic",
+        "Diagnostics",
         "Action Plan"
       ],
-      "category": "Log Collection",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "FLEP",
@@ -266,10 +263,10 @@
         "Log Collection",
         "Troubleshooting",
         "Telemetry",
-        "Diagnostic",
+        "Diagnostics",
         "Action Plan"
       ],
-      "category": "Performance Analysis",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "GetHyperVBottlenecks",
@@ -388,7 +385,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Diagnostic Collection",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 300,
       "telemetryName": "LogCollector",
@@ -428,7 +425,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Diagnostic Collection",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "GetShowTech",
@@ -468,7 +465,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Diagnostic Collection",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "SDDC Dell Enhanced",
@@ -508,7 +505,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Diagnostic Collection",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "SDDC Offline Dell Enhanced",
@@ -548,7 +545,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Diagnostic Collection",
+      "category": "Log Collection",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "TSR Collector",
@@ -601,7 +598,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Health & Validation",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 180,
       "telemetryName": "TALI",
@@ -641,7 +638,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Other",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "FLCkr",
@@ -677,7 +674,7 @@
         "wireshark",
         "troubleshooting"
       ],
-      "category": "Network Analysis",
+      "category": "Utility",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "Convert-Etl2Pcap",
@@ -712,7 +709,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Other",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 360,
       "telemetryName": "CluChk",
@@ -758,7 +755,7 @@
         "Diagnostic",
         "Action Plan"
       ],
-      "category": "Other",
+      "category": "Diagnostics",
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "DriFT",
