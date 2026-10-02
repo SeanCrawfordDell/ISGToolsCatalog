@@ -299,7 +299,7 @@ const ToolDetail = () => {
                   <StatusBadge status={tool.status} />
                   <span className="text-gray-600 dark:text-gray-400">Created in: {tool.regionCreated}</span>
                   <span className="text-gray-600 dark:text-gray-400">
-                    Operating System: {tool.operatingSystem.join(', ')}
+                    <span className="font-semibold">Operating System:</span> {tool.operatingSystem.join(', ')}
                   </span>
                 </div>
               </div>
