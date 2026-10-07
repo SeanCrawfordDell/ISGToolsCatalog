@@ -1,4 +1,5 @@
-const API_URL = import.meta.env.VITE_TELEMETRY_API_URL;
+const API_URL = import.meta.env?.VITE_TELEMETRY_API_URL
+  || (typeof window === 'undefined' ? 'http://localhost/telemetry' : undefined);
 
 /**
  * Fetch telemetry data for a specific tool

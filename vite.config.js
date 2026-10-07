@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_PUBLIC_BASE || '/Sean-Crawford/ISGToolsCatalog/',
+  base: process.env.VITE_PUBLIC_BASE || '/ISGToolsCatalog/',
   build: {
     outDir: 'docs',
     sourcemap: false,
