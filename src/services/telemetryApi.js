@@ -1,4 +1,4 @@
-const API_URL = "https://gsetools-bufhdqefb8e6ecc6.centralus-01.azurewebsites.net/api/GetTelemetrySummaryFast";
+const API_URL = import.meta.env.VITE_TELEMETRY_API_URL;
 
 /**
  * Fetch telemetry data for a specific tool
