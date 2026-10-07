@@ -1,0 +1,28 @@
+name: Feature request
+description: Propose an enhancement to an ISG tool.
+title: "Feature request: "
+labels: ["type:feature-request", "status:pending"]
+body:
+  - type: markdown
+    attributes:
+      value: "Feature requests are tracked as GitHub Issues and reviewed with the tool catalog."
+  - type: input
+    id: tool
+    attributes:
+      label: Related tool
+      description: Which catalog tool would benefit from this feature?
+      placeholder: Tool name
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Requested capability
+      description: Describe the problem to solve and the proposed outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Expected value
+      description: Who benefits, and how will this improve the workflow?

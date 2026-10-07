@@ -1,0 +1,36 @@
+name: Tool catalog or status change
+description: Request a persistent change to a tool's catalog entry or status.
+title: "Catalog change: "
+labels: ["type:catalog-change", "status:pending"]
+body:
+  - type: markdown
+    attributes:
+      value: "Approved changes are committed to the repository and appear after the site deploys."
+  - type: input
+    id: tool
+    attributes:
+      label: Related tool
+      description: Name the tool to update.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Requested status
+      options:
+        - Idea
+        - Planning
+        - Development
+        - Testing
+        - Internal Testing
+        - Released
+        - Maintenance
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested catalog change
+      description: Describe the status, team, region, description, category, or other catalog update.
+    validations:
+      required: true

@@ -1,0 +1,872 @@
+{
+  "tools": [
+    {
+      "id": "tool-001",
+      "name": "Dell ProSupport ToolBox",
+      "operatingSystem": ["Windows"],
+      "description": "Central launcher interface for Dell ProSupport utilities and troubleshooting tools.",
+      "whatItDoes": "Provides one interface for launching all available Dell ProSupport utilities including log collectors, diagnostic tools, and maintenance scripts for Dell PowerEdge, Windows Server, Hyper-V, and Azure Local environments.",
+      "valueProposition": "Simplifies tool access and discovery, reduces time to find the right tool for specific troubleshooting scenarios, and provides a unified entry point for all Dell ProSupport utilities.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2020-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "ToolBox launcher",
+          "status": "completed",
+          "targetDate": "2020-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Proxy support improvements",
+          "status": "completed",
+          "targetDate": "2023-06-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "launcher",
+        "utilities",
+        "powershell",
+        "dell",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostics",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "Dell ProSupport ToolBox",
+      "documentationAnchor": "-dell-prosupport-toolbox"
+    },
+    {
+      "id": "tool-002",
+      "name": "AzHCIUrlChecker",
+      "operatingSystem": ["Windows", "Azure Local"],
+      "description": "Connectivity checker for Azure Local endpoints and firewall requirements.",
+      "whatItDoes": "Checks connectivity to endpoints required by Azure Local as noted in Microsoft Azure Local documentation firewall requirements. Validates outbound connectivity for Azure Local deployments.",
+      "valueProposition": "Quickly identifies firewall, proxy, and outbound connectivity issues that can block Azure Local functionality, reducing troubleshooting time for network-related deployment failures.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2023-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Azure Local endpoint checking",
+          "status": "completed",
+          "targetDate": "2023-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "connectivity",
+        "azure-local",
+        "firewall",
+        "networking"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "AzHCIUrlChecker",
+      "documentationAnchor": "-azhciurlchecker"
+    },
+    {
+      "id": "tool-003",
+      "name": "BOILER",
+      "operatingSystem": ["Windows"],
+      "description": "CBS and DISM log analyzer for Windows servicing failures and corruption.",
+      "whatItDoes": "Analyzes CBS and DISM logs for errors, failures, warnings, failed KBs, language-pack issues, and corruption. Provides suggested remediation when recognized scenarios are detected.",
+      "valueProposition": "Dramatically reduces Windows Update and component-store troubleshooting time by automatically identifying root causes and providing specific remediation guidance for common servicing issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "CBS/DISM Log Collection",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Failing KB identification",
+          "status": "completed",
+          "targetDate": "2022-06-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Language pack repair guidance",
+          "status": "completed",
+          "targetDate": "2022-09-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "windows-update",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 60,
+      "telemetryName": "BOILER",
+      "documentationAnchor": "-boiler"
+    },
+    {
+      "id": "tool-004",
+      "name": "DART",
+      "operatingSystem": ["Windows"],
+      "description": "Dell Automated Server Updater for Windows Failover Cluster and HCI/S2D environments.",
+      "whatItDoes": "Windows Failover Cluster and HCI/S2D-aware utility that can install Windows Updates and Dell driver/firmware updates. Includes cluster node maintenance workflows and automated reboot management.",
+      "valueProposition": "Automates complex update processes for clustered environments, reduces manual intervention and human error, and ensures consistent update application across Dell server infrastructure.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Jim Gandy",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2021-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Cluster-aware updates",
+          "status": "completed",
+          "targetDate": "2021-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "DSU integration",
+          "status": "completed",
+          "targetDate": "2021-06-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Storage maintenance mode",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "updates",
+        "firmware",
+        "drivers",
+        "cluster",
+        "automation",
+        "Orchestration",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostics",
+        "Action Plan"
+      ],
+      "category": "Updates & Maintenance",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 120,
+      "telemetryName": "DART",
+      "documentationAnchor": "-dart"
+    },
+    {
+      "id": "tool-005",
+      "name": "FLEP",
+      "operatingSystem": ["Windows"],
+      "description": "Windows event log filter for common server, failover-clustering, and storage events.",
+      "whatItDoes": "Filters Windows event logs for common server, failover-clustering, storage, and Storport events. Quickly narrows large event logs to commonly relevant events for troubleshooting.",
+      "valueProposition": "Reduces time spent analyzing large event logs by filtering to relevant events, helps identify patterns and issues faster, and focuses troubleshooting efforts on actionable event data.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Event log filtering",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Storage event filtering",
+          "status": "completed",
+          "targetDate": "2022-06-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "event-logs",
+        "filtering",
+        "storage",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostics",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "FLEP",
+      "documentationAnchor": "-flep"
+    },
+    {
+      "id": "tool-006",
+      "name": "GetHyperVBottlenecks",
+      "operatingSystem": ["Windows"],
+      "description": "Hyper-V performance bottleneck detection tool.",
+      "whatItDoes": "Detects potential performance bottlenecks in Hyper-V environments by analyzing system metrics and configuration. Provides interactive prompts to guide performance analysis.",
+      "valueProposition": "Identifies Hyper-V performance issues before they impact production, provides actionable insights for optimization, and reduces time spent on performance troubleshooting.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Hyper-V performance analysis",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "hyper-v",
+        "performance",
+        "bottlenecks",
+        "virtualization",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostics",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "GetHyperVBottlenecks",
+      "documentationAnchor": "-gethypervbottlenecks"
+    },
+    {
+      "id": "tool-007",
+      "name": "iDRAC Connection Manager",
+      "operatingSystem": ["Windows"],
+      "description": "PowerShell Windows Forms interface for managing Dell server iDRAC access.",
+      "whatItDoes": "GUI utility for organizing Dell servers and simplifying iDRAC GUI and console access. Provides centralized management of multiple iDRAC connections.",
+      "valueProposition": "Simplifies management of multiple Dell servers, reduces time spent accessing individual iDRAC interfaces, and provides organized server inventory and quick access.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Jim Gandy",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2021-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "iDRAC management GUI",
+          "status": "completed",
+          "targetDate": "2021-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "idrac",
+        "gui",
+        "dell-servers"
+      ],
+      "category": "Server Management",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 10,
+      "telemetryName": "iDRAC Connection Manager",
+      "documentationAnchor": "-idrac-connection-manager"
+    },
+    {
+      "id": "tool-008",
+      "name": "KeyRelay",
+      "operatingSystem": ["Windows"],
+      "description": "GUI utility for sending text to applications that block clipboard paste operations.",
+      "whatItDoes": "Sends text to applications that do not allow normal clipboard paste operations. Useful for RDP sessions, secure terminals, and applications with paste restrictions.",
+      "valueProposition": "Overcomes paste restrictions in secure environments, reduces manual typing errors, and improves productivity when working with applications that block clipboard access.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Text relay utility",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "clipboard",
+        "paste",
+        "gui"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 10,
+      "telemetryName": "KeyRelay",
+      "documentationAnchor": "-keyrelay"
+    },
+    {
+      "id": "tool-009",
+      "name": "LogCollector",
+      "operatingSystem": ["Windows"],
+      "description": "Comprehensive log collection tool for Windows, Dell servers, and supported switches.",
+      "whatItDoes": "Collects troubleshooting logs from Windows, Dell servers, and supported switches. Prepares diagnostic data for investigation or support cases.",
+      "valueProposition": "Automates log collection process, ensures comprehensive diagnostic data gathering, and reduces time spent preparing data for support cases.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2020-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Windows log collection",
+          "status": "completed",
+          "targetDate": "2020-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Dell server log collection",
+          "status": "completed",
+          "targetDate": "2020-06-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Switch log collection",
+          "status": "completed",
+          "targetDate": "2021-01-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "logs",
+        "collection",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 300,
+      "telemetryName": "LogCollector",
+      "documentationAnchor": "-logcollector"
+    },
+    {
+      "id": "tool-010",
+      "name": "GetShowTech",
+      "operatingSystem": ["Windows"],
+      "description": "Dell switch show-tech diagnostic output collection tool.",
+      "whatItDoes": "Collects Dell switch show-tech diagnostic output for troubleshooting and support case preparation.",
+      "valueProposition": "Simplifies switch diagnostic data collection, ensures comprehensive switch information gathering, and reduces time spent preparing switch data for support.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2021-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Switch show-tech collection",
+          "status": "completed",
+          "targetDate": "2021-01-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "switches",
+        "networking",
+        "dell",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "GetShowTech",
+      "documentationAnchor": "-getshowtech"
+    },
+    {
+      "id": "tool-011",
+      "name": "SDDC Dell Enhanced",
+      "operatingSystem": ["Windows"],
+      "description": "SDDC diagnostic data collection workflow for Azure Stack HCI environments.",
+      "whatItDoes": "Runs the SDDC diagnostic data-collection workflow for Azure Stack HCI environments. Collects comprehensive diagnostic information for troubleshooting.",
+      "valueProposition": "Automates SDDC diagnostic data collection, ensures comprehensive information gathering for Azure Stack HCI issues, and reduces troubleshooting time.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "SDDC data collection",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "sddc",
+        "azure-stack-hci",
+        "collection",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "SDDC Dell Enhanced",
+      "documentationAnchor": "-sddc-dell-enhanced"
+    },
+    {
+      "id": "tool-012",
+      "name": "SDDC Offline Dell Enhanced",
+      "operatingSystem": ["Windows"],
+      "description": "Offline SDDC diagnostic data collection for environments without internet access.",
+      "whatItDoes": "Collects SDDC diagnostic information when the target environment does not have direct internet access. Uses offline workflow for air-gapped environments.",
+      "valueProposition": "Enables SDDC diagnostics in air-gapped environments, provides same comprehensive data collection as online version, and supports restricted network scenarios.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2023-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Offline SDDC collection",
+          "status": "completed",
+          "targetDate": "2023-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "sddc",
+        "offline",
+        "air-gapped",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "SDDC Offline Dell Enhanced",
+      "documentationAnchor": "-sddc-offline-dell-enhanced"
+    },
+    {
+      "id": "tool-013",
+      "name": "TSR Collector",
+      "operatingSystem": ["Windows"],
+      "description": "Dell Technical Support Report collector for cluster nodes via iDRAC.",
+      "whatItDoes": "Collects a Dell Technical Support Report (TSRs) from all nodes in a cluster via the iDRAC. Automates TSR collection across multiple cluster nodes.",
+      "valueProposition": "Automates TSR collection across cluster nodes, reduces manual intervention, and ensures comprehensive diagnostic data gathering for support cases.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Cluster TSR collection",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "tsr",
+        "cluster",
+        "idrac",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "TSR Collector",
+      "documentationAnchor": "-tsr-collector"
+    },
+    {
+      "id": "tool-014",
+      "name": "TALI",
+      "operatingSystem": ["Windows"],
+      "description": "Test-DellAzureLocalIssues - Azure Local cluster health and configuration checker.",
+      "whatItDoes": "Checks Dell Azure Local clusters for a broad set of common configuration, health, storage, networking, service, control-plane, and AKS Arc issues. Comprehensive health validation.",
+      "valueProposition": "Proactively identifies Azure Local configuration and health issues before they cause failures, provides comprehensive cluster health assessment, and reduces deployment and operational issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Jim Gandy",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2023-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Azure Local health checks",
+          "status": "completed",
+          "targetDate": "2023-01-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Storage health validation",
+          "status": "completed",
+          "targetDate": "2023-06-01",
+          "priority": "high"
+        },
+        {
+          "feature": "Network configuration checks",
+          "status": "completed",
+          "targetDate": "2023-09-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "azure-local",
+        "health-checks",
+        "validation",
+        "cluster",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 180,
+      "telemetryName": "TALI",
+      "documentationAnchor": "-tali"
+    },
+    {
+      "id": "tool-015",
+      "name": "FLCkr",
+      "operatingSystem": ["Windows"],
+      "description": "File-system filter driver altitude checker for Windows troubleshooting.",
+      "whatItDoes": "Checks file-system filter driver altitudes to identify potential conflicts or issues with filter driver stack configuration.",
+      "valueProposition": "Identifies filter driver conflicts that can cause system instability, helps troubleshoot storage and file system issues, and provides visibility into driver stack configuration.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2022-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "Filter driver altitude checking",
+          "status": "completed",
+          "targetDate": "2022-01-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "filter-drivers",
+        "file-system",
+        "windows",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "FLCkr",
+      "documentationAnchor": "-flckr"
+    },
+    {
+      "id": "tool-016",
+      "name": "Convert-Etl2Pcap",
+      "operatingSystem": ["Windows"],
+      "description": "Windows ETL network trace to PCAP format converter.",
+      "whatItDoes": "Converts Windows ETL network traces to PCAP format for analysis with standard network analysis tools like Wireshark.",
+      "valueProposition": "Enables analysis of Windows network traces with standard tools, improves network troubleshooting capabilities, and bridges Windows ETL format with industry-standard PCAP.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2023-01-01",
+      "updatedAt": "2024-09-15",
+      "roadmap": [
+        {
+          "feature": "ETL to PCAP conversion",
+          "status": "completed",
+          "targetDate": "2023-01-01",
+          "priority": "medium"
+        }
+      ],
+      "tags": [
+        "networking",
+        "etl",
+        "pcap",
+        "wireshark",
+        "troubleshooting"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "Convert-Etl2Pcap",
+      "documentationAnchor": "-convert-etl2pcap"
+    },
+    {
+      "id": "tool-017",
+      "name": "CluChk",
+      "operatingSystem": ["Windows"],
+      "description": "CluChk (Cluster Checker) is a comprehensive PowerShell diagnostic analysis tool for Dell S2D Ready Node and Azure Local deployments. It processes multiple types of diagnostic logs—including Show Tech-Support, Support Assist collections, SDDC and performance reports—to generate interactive HTML reports that validate deployment compliance against Dell's official deployment guides.",
+      "whatItDoes": "CluChk is a multi-mode diagnostic processor that can analyze:\n\n- Show Tech-Support logs from Dell switches\n- Support Assist collections (TSR) from Dell servers\n- SDDC diagnostic packages from Azure Stack HCI/Azure Local clusters\n- Performance reports from S2D/HCI environments\n\nKey Features:\n\n- Combined report generation (Configuration + Performance in single HTML)\n- Batch processing of multiple log sources\n- Intelligent Log Extraction (automatic ZIP extraction, handles complex SDDC bundle structures, path junction creation for long path handling >90 characters, SDDC log reorganization from nested structures)\n- Real-Time Validation (fetches latest Dell Support Matrix from GitHub dell/azurestack-docs, falls back through N-1, N-2 versions if current version doesn't match, validates firmware/driver versions against official support matrix, detects Azure Local vs Azure Stack HCI vs generic WSFC environments)\n- AI-Enhanced Analysis (AI-powered troubleshooting summaries, focused analysis on RED/severity issues, recommended order of work prioritization, detailed authentication and CLI detection logging)",
+      "valueProposition": "Rapid Triage: Single tool consolidates multiple diagnostic sources into one actionable report\n\nValidation Automation: Eliminates manual cross-referencing against support matrices\n\nConsistency: Standardized analysis across all cases reduces human error\n\nEfficiency: Combined Configuration + Performance reports in one pass",
+      "status": "released",
+      "progress": 100,
+      "owner": "Microsoft DE",
+      "team": "Cloud",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2026-09-18",
+      "updatedAt": "2026-09-18",
+      "roadmap": [],
+      "tags": [
+        "powershell",
+        "parser",
+        "validation",
+        "s2d",
+        "azure-local",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 360,
+      "telemetryName": "CluChk",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-018",
+      "name": "DriFT",
+      "operatingSystem": ["Windows"],
+      "description": "Driver and firmware validation tool for Windows and Azure Local servers.",
+      "whatItDoes": "Quickly validates server firmware and driver versions against Dell's recommended code currency standards. Identifies outdated components, the updates required to bring them into compliance, and direct links to the appropriate Dell packages. Presents the results in a clear HTML report that can be shared with customers or support engineers, without requiring third-party software.",
+      "valueProposition": "Drift dramatically reduces the time required to assess server compliance and update status. Tasks that traditionally take 10 to 20 minutes per server can be completed in less than 2 minutes.\n\nKey benefits include:\n\n- Rapid validation of firmware and driver compliance against Dell best practices.\n- Automated identification of missing updates and recommended remediation actions.\n- Easy-to-share HTML reporting for customers and support teams.\n- Improved visibility into the patch levels of customer environments without requiring third-party software.\n- Faster identification of potential security vulnerabilities caused by missing firmware or driver updates.\n- Reduced troubleshooting and assessment time, enabling support engineers to focus on resolving customer issues.\n\nBusiness Impact\nBy automating firmware and driver validation, Drift helps support engineers quickly assess system health, improve security posture, and accelerate customer support engagements. The result is faster issue resolution, increased operational efficiency, and a more consistent approach to maintaining server compliance.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Emily Watson",
+      "team": "Platform",
+      "repository": "https://github.com/dell/platform-health-monitor",
+      "documentation": "https://docs.dell.com/platform-monitor",
+      "createdAt": "2024-02-20",
+      "updatedAt": "2026-09-23",
+      "roadmap": [
+        {
+          "feature": "Core monitoring infrastructure",
+          "status": "completed",
+          "targetDate": "2024-05-15",
+          "priority": "high"
+        },
+        {
+          "feature": "Alerting system",
+          "status": "completed",
+          "targetDate": "2024-07-01",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "alerting",
+        "health-checks",
+        "dashboard",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "DriFT",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-019",
+      "name": "SLIC",
+      "operatingSystem": ["Windows"],
+      "description": "SLIC is a Dell switch Log Collection tool designed for Azure Local environments. It parses Dell switch logs, validates switch configurations against Azure Local recommended settings, and generates a detailed HTML report for troubleshooting and compliance review.",
+      "whatItDoes": "- Reads and analyzes raw Dell switch log files.\n- Extracts key events, errors, warnings, and operational status information.\n- Compares switch configurations against Azure Local validated and recommended settings.\n- Identifies configuration drift, misconfigurations, and compliance gaps.\n- Generates a clear, easy-to-read HTML report with summarized findings, tables, and visualizations where applicable.",
+      "valueProposition": "SLIC significantly reduces the time and effort required to review and validate switch configurations in Azure Local deployments.\n\nKey benefits include:\n\n- Automates the analysis of large and complex switch log files.\n- Quickly identifies configuration issues and deviations from validated Azure Local standards.\n- Produces a shareable HTML report that simplifies troubleshooting and customer communication.\n- Helps administrators and support engineers detect critical events, errors, and warnings that might otherwise be overlooked.\n- Improves operational consistency by validating network configurations against known best practices.\n- Accelerates root cause analysis and reduces troubleshooting time during support engagements.\n\n#### Business Impact\n\nBy automating switch Log Collection and configuration validation, SLIC helps support teams rapidly assess network health, identify configuration drift, and ensure Azure Local environments remain aligned with recommended configurations. This leads to faster issue resolution, improved operational reliability, and a more efficient support experience.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Jim Gandy",
+      "team": "Compute",
+      "repository": "https://github.com/DellProSupportGse/Tools",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2024-05-20",
+      "updatedAt": "2024-09-14",
+      "tags": [
+        "disaster-recovery",
+        "access-control",
+        "infrastructure",
+        "security",
+        "Orchestration",
+        "Log Collection",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "roadmap": [],
+      "category": "Log Collection",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "SLIC",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-020",
+      "name": "Windows Update Investigator",
+      "operatingSystem": ["Windows"],
+      "description": "Devin Windows Update Investigator is an AI-assisted PowerShell tool that analyzes Dell TSS and Windows servicing evidence to identify Windows Update failures and produce a professional HTML investigation report.",
+      "whatItDoes": "The tool accepts any of the following inputs:\n\n- A complete Windows Update TSS ZIP package\n- An extracted TSS log directory\n- An individual Windows Update log file (limited analysis mode)\n\nIt automatically discovers, extracts, and analyzes relevant servicing evidence, including:\n\n- CBS and CBS Persist logs\n- DISM logs\n- Windows Update logs\n- Servicing-related Event Logs\n- System information\n- Installed update inventory\n- Package and component state information\n\nAfter correlating evidence across these data sources, the tool leverages Devin AI to determine:\n\n- The failed update transaction\n- The affected KB, package, or feature update\n- The initial causal error\n- The underlying root cause\n- Potential relevance to known issues\n- Recommended remediation actions\n\nThe solution supports both Windows Client and Windows Server investigations and runs entirely through PowerShell using the Devin CLI.\n\nThe final output is a self-contained HTML investigation report containing:\n\n- System configuration details\n- Executive summary\n- Investigation findings\n- Supporting evidence\n- Failure timeline\n- Root cause analysis\n- Remediation recommendations\n- Post-remediation verification steps",
+      "valueProposition": "Investigating Windows Update failures often requires engineers to manually review large volumes of CBS, DISM, Windows Update, Event Viewer, and TSS log data. Identifying the actual failed transaction and separating true installation failures from unrelated scan, download, metadata, or communication errors can be both time-consuming and error-prone.\n\nDevin Windows Update Investigator significantly reduces this effort by automatically collecting relevant evidence, correlating events across multiple log sources, and producing a structured, evidence-based root cause analysis.\n\nBy standardizing the investigation process, the tool helps:\n\n- Reduce analysis time\n- Improve investigation consistency\n- Accelerate issue resolution\n- Minimize manual log review\n- Deliver clear, evidence-backed remediation guidance\n\nThe solution is designed for:\n\n- Technical Support Engineers\n- Escalation Engineers\n- Windows Administrators\n- Supportability Teams\n- Windows Server Specialists\n- Customer Success and Operations Teams\n\nIts primary goal is to help engineers move from log collection to root cause identification faster, with greater accuracy and consistency than traditional manual investigation methods.",
+      "status": "internal-testing",
+      "progress": "Working Prototype",
+      "owner": "APJ Microsoft Team",
+      "team": "APJ Microsoft Team",
+      "repository": "",
+      "documentation": "",
+      "createdAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "roadmap": [],
+      "tags": [
+        "Windows Update",
+        "Dell TSS",
+        "PowerShell",
+        "CBS",
+        "DISM",
+        "Windows Server",
+        "Log Collection",
+        "Orchestration",
+        "Troubleshooting",
+        "Telemetry",
+        "Diagnostic",
+        "Action Plan"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "APJ",
+      "minutesSavedPerRun": 0,
+      "telemetryName": "Windows Update Investigator",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-021",
+      "name": "OME Built-In Account Reset",
+      "operatingSystem": ["Windows"],
+      "description": "Script to reset the OpenManage Enterprise (OME) built-in admin account password using the OME API.",
+      "whatItDoes": "The script leverages either a local OME administrator account or a domain account with administrative privileges to reset the built-in admin account password. When executed, the script prompts for:\n\n- The IP address or FQDN of the OpenManage Enterprise (OME) appliance\n- A username and password with administrative rights on OME\n- A new password for the built-in admin account\n\nTo help prevent input errors, the new password is displayed in plain text for verification before the reset is performed. After successfully logging in with the reset admin account, the password can be changed through the OME user interface to a different secure value if desired.",
+      "valueProposition": "OpenManage Enterprise requires the built-in admin account to perform native backup and restore operations. If the password for this account is lost, current OME documentation recommends redeploying the appliance.\n\nThis script provides an alternative recovery method by leveraging the OME API to reset the built-in admin account password to a known value. As a result, administrators can regain access to the account and continue using backup and restore functionality without the time and effort associated with deploying a new OME appliance.\n\nKey Benefits:\n\n- Avoids a full OME appliance redeployment when the built-in admin password is lost\n- Enables recovery of the account using an existing administrator-level OME account\n- Restores access to native backup and restore functionality\n- Reduces operational downtime and administrative overhead\n- Provides a repeatable, automated recovery process using supported OME API functionality",
+      "status": "released",
+      "progress": 100,
+      "owner": "Dell ProSupport GSE",
+      "team": "Platform",
+      "repository": "https://eos2git.cec.lab.emc.com/Sean-Crawford/ISGToolsCatalog/blob/master/HostedTools/OME%20Password%20Instructions",
+      "documentation": "https://github.com/DellProSupportGse/Tools",
+      "createdAt": "2026-10-02",
+      "updatedAt": "2026-10-02",
+      "roadmap": [
+        {
+          "feature": "OME API-based password reset",
+          "status": "completed",
+          "targetDate": "2026-10-02",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "utility",
+        "ome",
+        "openmanage",
+        "password-reset",
+        "api",
+        "recovery"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 120,
+      "telemetryName": "OME Built-In Account Reset",
+      "documentationAnchor": null
+    }
+  ]
+}

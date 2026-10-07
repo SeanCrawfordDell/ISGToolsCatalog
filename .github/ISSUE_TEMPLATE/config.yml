@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Tool catalog and status changes
+    url: https://github.com/SeanCrawfordDell/DellSupportoolRepository/issues/new?template=tool_status_change.yml
+    about: Request a catalog or status update that will be reviewed and committed to the repository.

@@ -1,0 +1,28 @@
+name: Bug report
+description: Report a problem with an ISG tool.
+title: "Bug: "
+labels: ["type:bug-report", "status:pending"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a problem. This issue is the persistent record for the request."
+  - type: input
+    id: tool
+    attributes:
+      label: Related tool
+      description: Which catalog tool is affected?
+      placeholder: Tool name
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the expected behavior, actual behavior, and steps to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment or supporting details
+      description: Add versions, logs, screenshots, or relevant context.
