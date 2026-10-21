@@ -127,12 +127,9 @@ const Header = () => {
               href="https://pages.eos2git.cec.lab.emc.com/Sean-Crawford/ProSupportTSA/index.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-              title="ProSupportTSA"
+              className="text-gray-600 dark:text-gray-300 hover:text-dell-blue dark:hover:text-dell-blue px-3 py-2 rounded-md font-medium transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
+              Technical Support Assistant
             </a>
             <button 
               onClick={toggle}
