@@ -560,7 +560,7 @@
       "valueProposition": "Proactively identifies Azure Local configuration and health issues before they cause failures, provides comprehensive cluster health assessment, and reduces deployment and operational issues.",
       "status": "released",
       "progress": 100,
-      "owner": "Jim.Gandy@dell.com",
+      "owner": "Tommy.Paulk@dell.com",
       "team": "Platform",
       "repository": "https://github.com/DellProSupportGse/Tools",
       "documentation": "https://github.com/DellProSupportGse/Tools",

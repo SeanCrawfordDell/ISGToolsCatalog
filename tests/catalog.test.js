@@ -18,9 +18,10 @@ test('existing detail links retain their identities during reconciliation', asyn
 
 test('recent owner corrections and SLIC survive removal of the legacy catalog', async () => {
   const tools = await loadTools();
-  for (const name of ['DART', 'TALI', 'iDRAC Connection Manager', 'SLIC', 'DriFT']) {
+  for (const name of ['DART', 'iDRAC Connection Manager', 'SLIC', 'DriFT']) {
     assert.equal(tools.find(tool => tool.name === name)?.owner, 'Jim.Gandy@dell.com');
   }
+  assert.equal(tools.find(tool => tool.name === 'TALI')?.owner, 'Tommy.Paulk@dell.com');
   const slic = filterTools(tools, { search: 'SLIC' })[0];
   assert.equal(slic?.name, 'SLIC');
   assert.equal(slic.status, 'released');
