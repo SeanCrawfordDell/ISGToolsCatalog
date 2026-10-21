@@ -37,14 +37,6 @@ const Tools = () => {
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                 Tools Catalog
               </h1>
-              <a
-                href="https://seancrawforddell.github.io/EscalationQuality/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                Escalation Quality
-              </a>
             </div>
             
             {/* Search and Filters */}
