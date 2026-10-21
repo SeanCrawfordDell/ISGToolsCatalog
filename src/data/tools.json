@@ -867,6 +867,77 @@
       "minutesSavedPerRun": 120,
       "telemetryName": "OME Built-In Account Reset",
       "documentationAnchor": null
+    },
+    {
+      "id": "tool-022",
+      "name": "Time Tracker Web",
+      "operatingSystem": ["Windows"],
+      "description": "Web-based time tracking application for monitoring and managing work hours.",
+      "whatItDoes": "Provides a web interface for tracking time spent on tasks and projects. Enables users to log work hours, view time reports, and manage time entries through an intuitive web application.",
+      "valueProposition": "Simplifies time tracking and reporting, improves productivity monitoring, and provides visibility into work allocation across projects and tasks.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael Daniels",
+      "team": "Platform",
+      "repository": "https://githubcsg.cec.delllabs.net/Michael-Daniels/Time-Tracker-Web",
+      "documentation": "https://githubcsg.cec.delllabs.net/Michael-Daniels/Time-Tracker-Web",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "Web-based time tracking",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "time-tracking",
+        "productivity",
+        "web-app",
+        "reporting"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "Time Tracker Web",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-023",
+      "name": "ESX Top Data Viewer",
+      "operatingSystem": ["ESX"],
+      "description": "Web-based viewer for ESX top performance data from VMware ESXi environments.",
+      "whatItDoes": "Provides a web interface for viewing and analyzing ESX top performance data from VMware ESXi hosts. Displays CPU, memory, network, and storage metrics in an accessible format.",
+      "valueProposition": "Simplifies ESX top data analysis, provides better visibility into ESXi performance metrics, and enables easier troubleshooting of VMware infrastructure performance issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael Daniels",
+      "team": "Platform",
+      "repository": "https://githubcsg.cec.delllabs.net/Michael-Daniels/esx-top-data-viewer",
+      "documentation": "https://githubcsg.cec.delllabs.net/Michael-Daniels/esx-top-data-viewer",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "ESX top data visualization",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "vmware",
+        "esxi",
+        "performance",
+        "monitoring",
+        "web-app"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "ESX Top Data Viewer",
+      "documentationAnchor": null
     }
   ]
 }

@@ -7,7 +7,7 @@ import StatusBadge from '../components/tools/StatusBadge';
 import { githubIssueFormUrl } from '../utils/githubLinks';
 
 const REGION_OPTIONS = ['North America', 'EMEA', 'LATAM', 'ANZ', 'APJ'];
-const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local'];
+const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local', 'ESX'];
 
 const Tools = () => {
   const { tools, filteredTools, loading, filters, sortBy, setSortBy, updateFilters, clearFilters } = useTools();
