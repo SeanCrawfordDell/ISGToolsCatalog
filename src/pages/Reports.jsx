@@ -66,7 +66,8 @@ const Reports = () => {
   const { tools, loading: catalogLoading, error: catalogError } = useTools();
   const [selectedId, setSelectedId] = useState(null);
   const selectedTool = tools.find(tool => tool.id === selectedId)
-    || tools.find(tool => tool.name === 'iDRAC Connection Manager') || tools[0];
+    || tools.find(tool => tool.name === 'iDRAC Connection Manager')
+    || tools.find(tool => tool.telemetryName);
   const { telemetry, loading, error: telemetryError } = useToolTelemetry(selectedTool?.telemetryName);
   const [estimates, setEstimates] = useState(() => {
     try {
@@ -136,7 +137,7 @@ const Reports = () => {
           <section className="card mb-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <nav className="flex flex-wrap gap-2" aria-label="Select a telemetry tool">
-                {[...tools].sort((a, b) => a.name.localeCompare(b.name)).map(tool => (
+                {[...tools].filter(tool => tool.telemetryName).sort((a, b) => a.name.localeCompare(b.name)).map(tool => (
                   <button key={tool.id} type="button" onClick={() => setTool(tool)} aria-pressed={selectedTool?.id === tool.id} className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${selectedTool?.id === tool.id ? 'bg-dell-blue text-white' : 'bg-gray-100 text-gray-700 hover:bg-blue-100 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}`}>
                     {tool.name}
                   </button>
@@ -148,7 +149,8 @@ const Reports = () => {
 
           {(catalogError || telemetryError) && <p role="alert" className="card mb-6">{catalogError || telemetryError}</p>}
           {(catalogLoading || loading) && <p role="status" className="card mb-6">Loading telemetry…</p>}
-          {!catalogLoading && !loading && !catalogError && telemetry && <>
+          {!catalogLoading && !loading && !catalogError && !selectedTool?.telemetryName && <p className="card mb-6">No tools with telemetry data are available in the catalog.</p>}
+          {!catalogLoading && !loading && !catalogError && selectedTool?.telemetryName && telemetry && <>
           <section className="card mb-6">
             <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="text-xl font-semibold text-gray-900 dark:text-white">{selectedTool?.name} Estimated Time Savings</h2><span className="text-sm text-gray-500 dark:text-gray-400">All countries</span></div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
