@@ -7,7 +7,7 @@ import StatusBadge from '../components/tools/StatusBadge';
 import { githubIssueFormUrl } from '../utils/githubLinks';
 
 const REGION_OPTIONS = ['North America', 'EMEA', 'LATAM', 'ANZ', 'APJ'];
-const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local'];
+const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local', 'ESX'];
 
 const Tools = () => {
   const { tools, filteredTools, loading, filters, sortBy, setSortBy, updateFilters, clearFilters } = useTools();
@@ -37,14 +37,6 @@ const Tools = () => {
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                 Tools Catalog
               </h1>
-              <a
-                href="https://seancrawforddell.github.io/EscalationQuality/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                Escalation Quality
-              </a>
             </div>
             
             {/* Search and Filters */}
@@ -210,6 +202,7 @@ const Tools = () => {
                           <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm text-dell-blue dark:text-blue-300">
                             <span>{tool.category}</span>
                             <span><span className="font-semibold">Operating System:</span> {tool.operatingSystem.join(', ')}</span>
+                            <span><span className="font-semibold">Owner:</span> {tool.owner}</span>
                           </div>
                         </div>
                         <StatusBadge status={tool.status} />

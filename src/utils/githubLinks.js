@@ -1,4 +1,4 @@
-export const repositoryUrl = 'https://github.com/SeanCrawfordDell/DellSupportoolRepository';
+export const repositoryUrl = 'https://eos2git.cec.lab.emc.com/Sean-Crawford/ISGToolsCatalog';
 
 export const githubIssueFormUrl = (type, toolName = '') => {
   const template = type === 'bug' ? 'bug_report.yml' : 'feature_request.yml';
@@ -9,8 +9,6 @@ export const githubIssueFormUrl = (type, toolName = '') => {
 };
 
 export const githubIssuesUrl = `${repositoryUrl}/issues`;
-
-export const githubStatusChangeUrl = `${repositoryUrl}/issues/new?template=tool_status_change.yml`;
 
 export const githubNewToolRequestUrl = `${repositoryUrl}/issues/new?template=new_tool.md&title=${encodeURIComponent('New tool request')}`;
 

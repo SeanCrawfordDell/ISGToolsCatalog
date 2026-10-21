@@ -5,6 +5,7 @@ import ToolDetail from './pages/ToolDetail';
 import Requests from './pages/Requests';
 import Admin from './pages/Admin';
 import Reports from './pages/Reports';
+import AISkills from './pages/AISkills';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/tools/:id" element={<ToolDetail />} />
+        <Route path="/ai-skills" element={<AISkills />} />
         <Route path="/requests" element={<Requests />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/reports" element={<Reports />} />

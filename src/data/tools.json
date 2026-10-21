@@ -867,6 +867,114 @@
       "minutesSavedPerRun": 120,
       "telemetryName": "OME Built-In Account Reset",
       "documentationAnchor": null
+    },
+    {
+      "id": "tool-022",
+      "name": "Time Tracker Web",
+      "operatingSystem": ["Windows"],
+      "description": "Web-based time tracking application for monitoring and managing work hours.",
+      "whatItDoes": "Provides a web interface for tracking time spent on tasks and projects. Enables users to log work hours, view time reports, and manage time entries through an intuitive web application.",
+      "valueProposition": "Simplifies time tracking and reporting, improves productivity monitoring, and provides visibility into work allocation across projects and tasks.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael.Daniels@dell.com",
+      "team": "Platform",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/Time-Tracker-Web.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/Time-Tracker-Web.git",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "Web-based time tracking",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "time-tracking",
+        "productivity",
+        "web-app",
+        "reporting"
+      ],
+      "category": "Utility",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "Time Tracker Web",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-023",
+      "name": "ESX Top Data Viewer",
+      "operatingSystem": ["ESX"],
+      "description": "Web-based viewer for ESX top performance data from VMware ESXi environments.",
+      "whatItDoes": "Provides a web interface for viewing and analyzing ESX top performance data from VMware ESXi hosts. Displays CPU, memory, network, and storage metrics in an accessible format.",
+      "valueProposition": "Simplifies ESX top data analysis, provides better visibility into ESXi performance metrics, and enables easier troubleshooting of VMware infrastructure performance issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael.Daniels@dell.com",
+      "team": "Platform",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/esx-top-data-viewer.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/esx-top-data-viewer.git",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "ESX top data visualization",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "vmware",
+        "esxi",
+        "performance",
+        "monitoring",
+        "web-app"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "ESX Top Data Viewer",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-024",
+      "name": "vSAN Analyzer Viewer",
+      "operatingSystem": ["ESX"],
+      "description": "Web-based viewer for vSAN health and performance analysis data from VMware environments.",
+      "whatItDoes": "Provides a web interface for viewing and analyzing vSAN health, performance, and configuration data from VMware vSAN environments. Displays storage cluster health, component status, and performance metrics.",
+      "valueProposition": "Simplifies vSAN health and performance analysis, provides better visibility into vSAN cluster status, and enables easier troubleshooting of VMware vSAN storage issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael.Daniels@dell.com",
+      "team": "Platform",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/vSAN_analyzer_viewer.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/vSAN_analyzer_viewer.git",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "vSAN health and performance visualization",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "vmware",
+        "vsan",
+        "storage",
+        "performance",
+        "monitoring",
+        "web-app"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "vSAN Analyzer Viewer",
+      "documentationAnchor": null
     }
   ]
 }
