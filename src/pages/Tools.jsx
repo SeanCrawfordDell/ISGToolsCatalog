@@ -210,6 +210,7 @@ const Tools = () => {
                           <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm text-dell-blue dark:text-blue-300">
                             <span>{tool.category}</span>
                             <span><span className="font-semibold">Operating System:</span> {tool.operatingSystem.join(', ')}</span>
+                            <span><span className="font-semibold">Owner:</span> {tool.owner}</span>
                           </div>
                         </div>
                         <StatusBadge status={tool.status} />

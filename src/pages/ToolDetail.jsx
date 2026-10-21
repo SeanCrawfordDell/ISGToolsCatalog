@@ -301,6 +301,9 @@ const ToolDetail = () => {
                   <span className="text-gray-600 dark:text-gray-400">
                     <span className="font-semibold">Operating System:</span> {tool.operatingSystem.join(', ')}
                   </span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <span className="font-semibold">Owner:</span> {tool.owner}
+                  </span>
                 </div>
               </div>
             </div>
