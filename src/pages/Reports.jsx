@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Chart } from 'react-chartjs-2';
 import 'chart.js/auto';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { useTools } from '../hooks/useTools';
-import { useToolTelemetry } from '../hooks/useToolTelemetry';
+import { getToolTelemetry } from '../services/telemetryApi';
 import { createEndpointPreservingTickCallback } from '../utils/chartTicks';
 import { formatReportDate as formatDate, formatReportMonth as formatMonth } from '../utils/reportFormatting';
 import { filterMonthlyByYears } from '../utils/timeSavings';
@@ -65,10 +65,13 @@ const chartOptions = (yTitle, showLegend = false) => ({
 const Reports = () => {
   const { tools, loading: catalogLoading, error: catalogError } = useTools();
   const [selectedId, setSelectedId] = useState(null);
-  const selectedTool = tools.find(tool => tool.id === selectedId)
-    || tools.find(tool => tool.name === 'iDRAC Connection Manager')
-    || tools.find(tool => tool.telemetryName);
-  const { telemetry, loading, error: telemetryError } = useToolTelemetry(selectedTool?.telemetryName);
+  const [toolsWithTelemetry, setToolsWithTelemetry] = useState([]);
+  const [telemetryCache, setTelemetryCache] = useState(new Map());
+  const [loadingTelemetry, setLoadingTelemetry] = useState(true);
+  const selectedTool = toolsWithTelemetry.find(tool => tool.id === selectedId)
+    || toolsWithTelemetry.find(tool => tool.name === 'iDRAC Connection Manager')
+    || toolsWithTelemetry[0];
+  const telemetry = selectedTool ? telemetryCache.get(selectedTool.telemetryName) : null;
   const [estimates, setEstimates] = useState(() => {
     try {
       const stored = JSON.parse(localStorage.getItem('toolSavingsEstimates') || '{}');
@@ -88,6 +91,36 @@ const Reports = () => {
   const [showTrend, setShowTrend] = useState(true);
   const [selectedYears, setSelectedYears] = useState([]);
 
+  useEffect(() => {
+    if (!tools.length) return;
+
+    const controller = new AbortController();
+    const fetchAllTelemetry = async () => {
+      setLoadingTelemetry(true);
+      const cache = new Map();
+      const withData = [];
+
+      const promises = tools.map(async (tool) => {
+        if (!tool.telemetryName) return;
+        const data = await getToolTelemetry(tool.telemetryName, { signal: controller.signal });
+        if (data && data.rowCount > 0) {
+          cache.set(tool.telemetryName, data);
+          withData.push(tool);
+        }
+      });
+
+      await Promise.all(promises);
+      if (!controller.signal.aborted) {
+        setTelemetryCache(cache);
+        setToolsWithTelemetry(withData);
+        setLoadingTelemetry(false);
+      }
+    };
+
+    fetchAllTelemetry();
+    return () => controller.abort();
+  }, [tools]);
+
   const monthly = telemetry?.monthly || [];
   const years = [...new Set(monthly.map(({ Month }) => Month.slice(0, 4)))].sort();
   const savingsMonthly = filterMonthlyByYears(monthly, selectedYears);
@@ -102,9 +135,11 @@ const Reports = () => {
   const currentMonth = savingsMonthly.find(item => item.Month === currentMonthKey);
 
   const setTool = (tool) => {
-    setSelectedId(tool.id);
-    setSelectedYears([]);
-    setSavingsView('monthly');
+    if (tool) {
+      setSelectedId(tool.id);
+      setSelectedYears([]);
+      setSavingsView('monthly');
+    }
   };
 
   const toggleYear = (year) => {
@@ -137,7 +172,7 @@ const Reports = () => {
           <section className="card mb-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <nav className="flex flex-wrap gap-2" aria-label="Select a telemetry tool">
-                {[...tools].filter(tool => tool.telemetryName).sort((a, b) => a.name.localeCompare(b.name)).map(tool => (
+                {[...toolsWithTelemetry].sort((a, b) => a.name.localeCompare(b.name)).map(tool => (
                   <button key={tool.id} type="button" onClick={() => setTool(tool)} aria-pressed={selectedTool?.id === tool.id} className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${selectedTool?.id === tool.id ? 'bg-dell-blue text-white' : 'bg-gray-100 text-gray-700 hover:bg-blue-100 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'}`}>
                     {tool.name}
                   </button>
@@ -147,10 +182,10 @@ const Reports = () => {
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">Select a tool to view its telemetry report.</p>
           </section>
 
-          {(catalogError || telemetryError) && <p role="alert" className="card mb-6">{catalogError || telemetryError}</p>}
-          {(catalogLoading || loading) && <p role="status" className="card mb-6">Loading telemetry…</p>}
-          {!catalogLoading && !loading && !catalogError && !selectedTool?.telemetryName && <p className="card mb-6">No tools with telemetry data are available in the catalog.</p>}
-          {!catalogLoading && !loading && !catalogError && selectedTool?.telemetryName && telemetry && <>
+          {(catalogError) && <p role="alert" className="card mb-6">{catalogError}</p>}
+          {(catalogLoading || loadingTelemetry) && <p role="status" className="card mb-6">Loading telemetry…</p>}
+          {!catalogLoading && !loadingTelemetry && !catalogError && !selectedTool && <p className="card mb-6">No tools with telemetry data are available in the catalog.</p>}
+          {!catalogLoading && !loadingTelemetry && !catalogError && selectedTool && telemetry && <>
           <section className="card mb-6">
             <div className="flex flex-wrap items-center justify-between gap-3"><h2 className="text-xl font-semibold text-gray-900 dark:text-white">{selectedTool?.name} Estimated Time Savings</h2><span className="text-sm text-gray-500 dark:text-gray-400">All countries</span></div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
