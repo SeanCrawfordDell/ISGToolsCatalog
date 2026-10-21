@@ -840,7 +840,7 @@
       "valueProposition": "OpenManage Enterprise requires the built-in admin account to perform native backup and restore operations. If the password for this account is lost, current OME documentation recommends redeploying the appliance.\n\nThis script provides an alternative recovery method by leveraging the OME API to reset the built-in admin account password to a known value. As a result, administrators can regain access to the account and continue using backup and restore functionality without the time and effort associated with deploying a new OME appliance.\n\nKey Benefits:\n\n- Avoids a full OME appliance redeployment when the built-in admin password is lost\n- Enables recovery of the account using an existing administrator-level OME account\n- Restores access to native backup and restore functionality\n- Reduces operational downtime and administrative overhead\n- Provides a repeatable, automated recovery process using supported OME API functionality",
       "status": "released",
       "progress": 100,
-      "owner": "Dell ProSupport GSE",
+      "owner": "Ted.Park@dell.com",
       "team": "Platform",
       "repository": "https://eos2git.cec.lab.emc.com/Sean-Crawford/ISGToolsCatalog/blob/master/HostedTools/OME%20Password%20Instructions",
       "documentation": "https://github.com/DellProSupportGse/Tools",
@@ -866,6 +866,7 @@
       "regionCreated": "North America",
       "minutesSavedPerRun": 120,
       "telemetryName": "OME Built-In Account Reset",
+      "instructions": "Run the following in PowerShell 7 (verify the version with `(get-host).version`). The new password is displayed as plain text so it can be easily recorded.\n\n```powershell\n#Reset OME admin Password:\n#Requires PowerShell 7 - verify version with (get-host).version\n#New password will display as plaintext as a precaution so it can be easily recorded\n$IP=Read-Host -Prompt \"Enter the IP address and credentials for your OME\";$cred=get-credential;$URI=\"https://\"+\"$IP\"+\"/api/AccountService/Accounts\";$admin=(Invoke-RestMethod -SkipCertificateCheck -ContentType application/json -Credential $cred -Uri $URI).value | ? {$_.RoleId -eq \"103\"};$URI2=\"https://\"+\"$IP\"+\"/api/AccountService/Accounts('\"+($admin).Id+\"')\";$new_pass=Read-Host -Prompt \"Enter the new admin password for your OME\";$ChPwd = @{Id = ($admin).Id; UserTypeId = ($admin).UserTypeId; DirectoryServiceId = ($admin).DirectoryServiceId; Description = \"admin\"; Name = \"admin\"; Password = \"$new_pass\"; UserName = \"admin\"; RoleId = \"103\"; Enabled = $true}|ConvertTo-Json;Invoke-RestMethod -SkipCertificateCheck -ContentType application/json -Credential $cred -Method PUT -Body $ChPwd -Uri $URI2\n```",
       "documentationAnchor": null
     },
     {

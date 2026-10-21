@@ -218,7 +218,9 @@ const ToolDetail = () => {
             .finally(() => setTelemetryLoading(false));
 
           const documentationAnchor = foundTool.documentationAnchor;
-          if (documentationAnchor) {
+          if (foundTool.instructions) {
+            setInstructions(foundTool.instructions);
+          } else if (documentationAnchor) {
             setInstructionsLoading(true);
             getToolInstructions(documentationAnchor)
               .then(setInstructions)
@@ -632,10 +634,10 @@ const ToolDetail = () => {
                     Instructions
                   </h2>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    Loaded live from the tool's GitHub README.
+                    {tool.instructions ? 'Provided with this tool in the catalog.' : "Loaded live from the tool's GitHub README."}
                   </p>
                 </div>
-                {getDocumentationUrl(tool) && (
+                {!tool.instructions && getDocumentationUrl(tool) && (
                   <a
                     href={getDocumentationUrl(tool)}
                     target="_blank"
