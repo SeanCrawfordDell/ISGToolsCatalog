@@ -879,8 +879,8 @@
       "progress": 100,
       "owner": "Michael Daniels",
       "team": "Platform",
-      "repository": "https://githubcsg.cec.delllabs.net/Michael-Daniels/Time-Tracker-Web",
-      "documentation": "https://githubcsg.cec.delllabs.net/Michael-Daniels/Time-Tracker-Web",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/Time-Tracker-Web.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/Time-Tracker-Web.git",
       "createdAt": "2026-10-21",
       "updatedAt": "2026-10-21",
       "roadmap": [
@@ -914,8 +914,8 @@
       "progress": 100,
       "owner": "Michael Daniels",
       "team": "Platform",
-      "repository": "https://githubcsg.cec.delllabs.net/Michael-Daniels/esx-top-data-viewer",
-      "documentation": "https://githubcsg.cec.delllabs.net/Michael-Daniels/esx-top-data-viewer",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/esx-top-data-viewer.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/esx-top-data-viewer.git",
       "createdAt": "2026-10-21",
       "updatedAt": "2026-10-21",
       "roadmap": [
@@ -937,6 +937,43 @@
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "ESX Top Data Viewer",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-024",
+      "name": "vSAN Analyzer Viewer",
+      "operatingSystem": ["ESX"],
+      "description": "Web-based viewer for vSAN health and performance analysis data from VMware environments.",
+      "whatItDoes": "Provides a web interface for viewing and analyzing vSAN health, performance, and configuration data from VMware vSAN environments. Displays storage cluster health, component status, and performance metrics.",
+      "valueProposition": "Simplifies vSAN health and performance analysis, provides better visibility into vSAN cluster status, and enables easier troubleshooting of VMware vSAN storage issues.",
+      "status": "released",
+      "progress": 100,
+      "owner": "Michael Daniels",
+      "team": "Platform",
+      "repository": "https://eos2git.cec.lab.emc.com/Michael-Daniels/vSAN_analyzer_viewer.git",
+      "documentation": "https://eos2git.cec.lab.emc.com/Michael-Daniels/vSAN_analyzer_viewer.git",
+      "createdAt": "2026-10-21",
+      "updatedAt": "2026-10-21",
+      "roadmap": [
+        {
+          "feature": "vSAN health and performance visualization",
+          "status": "completed",
+          "targetDate": "2026-10-21",
+          "priority": "high"
+        }
+      ],
+      "tags": [
+        "vmware",
+        "vsan",
+        "storage",
+        "performance",
+        "monitoring",
+        "web-app"
+      ],
+      "category": "Diagnostics",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 30,
+      "telemetryName": "vSAN Analyzer Viewer",
       "documentationAnchor": null
     }
   ]
