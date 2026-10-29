@@ -37,3 +37,8 @@ test('filter matches names, owners and statuses', () => {
   assert.ok(matches(tool, 'released'));
   assert.ok(!matches(tool, 'zzz'));
 });
+
+test('AI integration is flagged on CluChk and the Thunder tools', async () => {
+  const flagged = loadPortfolio(await loadTools()).filter(t => t.aiIntegration).map(t => t.name);
+  assert.deepEqual(flagged.sort(), ['CluChk', 'Thunder Agentic AI Framework & Ecosystem', 'VCF 9.1 SME Agent (ThunderIQ+)']);
+});

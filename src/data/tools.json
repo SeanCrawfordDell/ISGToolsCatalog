@@ -573,6 +573,7 @@
       "operatingSystem": [
         "Windows"
       ],
+      "aiIntegration": true,
       "description": "CluChk (Cluster Checker) is a comprehensive PowerShell diagnostic analysis tool for Dell S2D Ready Node and Azure Local deployments. It processes multiple types of diagnostic logs—including Show Tech-Support, Support Assist collections, SDDC and performance reports—to generate interactive HTML reports that validate deployment compliance against Dell's official deployment guides.",
       "whatItDoes": "CluChk is a multi-mode diagnostic processor that can analyze:\n\n- Show Tech-Support logs from Dell switches\n- Support Assist collections (TSR) from Dell servers\n- SDDC diagnostic packages from Azure Stack HCI/Azure Local clusters\n- Performance reports from S2D/HCI environments\n\nKey Features:\n\n- Combined report generation (Configuration + Performance in single HTML)\n- Batch processing of multiple log sources\n- Intelligent Log Extraction (automatic ZIP extraction, handles complex SDDC bundle structures, path junction creation for long path handling >90 characters, SDDC log reorganization from nested structures)\n- Real-Time Validation (fetches latest Dell Support Matrix from GitHub dell/azurestack-docs, falls back through N-1, N-2 versions if current version doesn't match, validates firmware/driver versions against official support matrix, detects Azure Local vs Azure Stack HCI vs generic WSFC environments)\n- AI-Enhanced Analysis (AI-powered troubleshooting summaries, focused analysis on RED/severity issues, recommended order of work prioritization, detailed authentication and CLI detection logging)",
       "valueProposition": "Rapid Triage: Single tool consolidates multiple diagnostic sources into one actionable report\n\nValidation Automation: Eliminates manual cross-referencing against support matrices\n\nConsistency: Standardized analysis across all cases reduces human error\n\nEfficiency: Combined Configuration + Performance reports in one pass",
@@ -841,6 +842,60 @@
       "regionCreated": "North America",
       "minutesSavedPerRun": 30,
       "telemetryName": "vSAN Analyzer Viewer",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-025",
+      "name": "Thunder Agentic AI Framework & Ecosystem",
+      "operatingSystem": [
+        "ESX"
+      ],
+      "aiIntegration": true,
+      "description": "Agentic AI framework and ecosystem for building and running AI agents.",
+      "whatItDoes": "Provides the Thunder agentic AI framework and the ecosystem of agents built on it.",
+      "valueProposition": "Gives teams a common foundation for building AI agents.",
+      "status": "internal-testing",
+      "progress": "Internal Testing",
+      "owner": "Fabien.Jaubert@dell.com",
+      "team": "Platform",
+      "repository": "",
+      "documentation": "",
+      "createdAt": "2026-10-29",
+      "updatedAt": "2026-10-29",
+      "tags": [],
+      "category": "AI",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 0,
+      "telemetryName": "Thunder Agentic AI Framework & Ecosystem",
+      "documentationAnchor": null
+    },
+    {
+      "id": "tool-026",
+      "name": "VCF 9.1 SME Agent (ThunderIQ+)",
+      "operatingSystem": [
+        "ESX"
+      ],
+      "aiIntegration": true,
+      "description": "AI subject matter expert agent for VMware Cloud Foundation (VCF) 9.1, built on ThunderIQ+.",
+      "whatItDoes": "AI agent that answers VMware Cloud Foundation (VCF) 9.1 questions as a subject matter expert.",
+      "valueProposition": "Gives engineers faster access to VCF 9.1 expertise.",
+      "status": "internal-testing",
+      "progress": "Internal Testing",
+      "owner": "Fabien.Jaubert@dell.com",
+      "team": "Platform",
+      "repository": "",
+      "documentation": "",
+      "createdAt": "2026-10-29",
+      "updatedAt": "2026-10-29",
+      "tags": [
+        "VMWARE",
+        "VCF",
+        "AI Enabled"
+      ],
+      "category": "AI",
+      "regionCreated": "North America",
+      "minutesSavedPerRun": 0,
+      "telemetryName": "VCF 9.1 SME Agent (ThunderIQ+)",
       "documentationAnchor": null
     }
   ]

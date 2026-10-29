@@ -153,6 +153,10 @@
         </div>
 
         <div class="form-group">
+          <label><input type="checkbox" id="aiIntegration" style="width:auto"> AI Integration</label>
+        </div>
+
+        <div class="form-group">
           <label for="platform">Platform (comma-separated: Server, Switch, SAN, Solution)</label>
           <input type="text" id="platform" placeholder="Server, Switch">
         </div>
@@ -321,6 +325,7 @@
       document.getElementById('valueProposition').value = tool.valueProposition || '';
       document.getElementById('tags').value = Array.isArray(tool.tags) ? tool.tags.join(', ') : '';
       document.getElementById('progress').value = tool.progress ?? 100;
+      document.getElementById('aiIntegration').checked = tool.aiIntegration === true;
       document.getElementById('platform').value = Array.isArray(tool.platform) ? tool.platform.join(', ') : '';
       document.getElementById('minutesSavedPerRun').value = tool.minutesSavedPerRun || 30;
       document.getElementById('telemetryName').value = tool.telemetryName || '';
@@ -349,6 +354,7 @@
         team: document.getElementById('team').value,
         regionCreated: document.getElementById('region').value,
         operatingSystem: document.getElementById('operatingSystem').value.split(',').map(s => s.trim()).filter(s => s),
+        aiIntegration: document.getElementById('aiIntegration').checked,
         platform: document.getElementById('platform').value.split(',').map(s => s.trim()).filter(s => s),
         repository: document.getElementById('repository').value,
         documentation: document.getElementById('documentation').value,
@@ -363,6 +369,7 @@
         updatedAt: today
       };
       if (!tool.platform.length) delete tool.platform;
+      if (!tool.aiIntegration) delete tool.aiIntegration;
 
       // Add instructions if provided
       const instructions = document.getElementById('instructions').value;
@@ -505,7 +512,7 @@
           changes.push({ type: 'add', tool });
         } else {
           const diff = {};
-          const fields = ['name', 'status', 'category', 'owner', 'team', 'regionCreated', 'description', 'whatItDoes', 'valueProposition', 'repository', 'documentation', 'operatingSystem', 'platform', 'tags', 'progress', 'minutesSavedPerRun', 'telemetryName', 'instructions'];
+          const fields = ['name', 'status', 'category', 'owner', 'team', 'regionCreated', 'description', 'whatItDoes', 'valueProposition', 'repository', 'documentation', 'operatingSystem', 'platform', 'aiIntegration', 'tags', 'progress', 'minutesSavedPerRun', 'telemetryName', 'instructions'];
           fields.forEach(field => {
             const currentVal = Array.isArray(tool[field]) ? JSON.stringify(tool[field]) : tool[field];
             const originalVal = Array.isArray(original[field]) ? JSON.stringify(original[field]) : original[field];

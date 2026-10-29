@@ -52,6 +52,7 @@ export function normalize(tool, index = 0) {
     percent,
     progressLabel: percent === null ? text(progressValue) : `${percent}%`,
     os: (Array.isArray(tool?.operatingSystem) ? tool.operatingSystem : [tool?.operatingSystem]).map(text).filter(Boolean).join(', '),
+    aiIntegration: tool?.aiIntegration === true,
     platform: (Array.isArray(tool?.platform) ? tool.platform : []).map(text).filter(Boolean).join(', ')
   };
 }

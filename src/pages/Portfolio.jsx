@@ -58,12 +58,12 @@ const PortfolioTable = ({ list, group, all }) => (
   <div className="card overflow-x-auto p-0">
     <table className="min-w-full text-left text-sm">
       <thead className="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200">
-        <tr>{['Tool', 'Owner', 'Development Status', 'Progress', 'Operating system', 'Description'].map(label => <th key={label} scope="col" className="px-4 py-3 font-semibold">{label}</th>)}</tr>
+        <tr>{['Tool', 'Owner', 'Development Status', 'Progress', 'Operating system', 'AI Integration', 'Description'].map(label => <th key={label} scope="col" className="px-4 py-3 font-semibold">{label}</th>)}</tr>
       </thead>
       {groups(list, group).map(g => (
         <tbody key={g.key} className="border-t border-gray-200 dark:border-gray-700">
           <tr className="bg-gray-50 dark:bg-gray-800">
-            <th colSpan={6} scope="rowgroup" className="px-4 py-2 font-semibold text-gray-900 dark:text-white">
+            <th colSpan={7} scope="rowgroup" className="px-4 py-2 font-semibold text-gray-900 dark:text-white">
               {group === 'Development Status' && <><Dot id={g.key} />{' '}</>}
               {group === 'Owner' && <><Owner name={g.name} all={all} />{' '}</>}
               {group !== 'Owner' && g.name}
@@ -77,6 +77,9 @@ const PortfolioTable = ({ list, group, all }) => (
               <td className="px-4 py-3"><Pill status={tool.status}>{tool.statusLabel}</Pill></td>
               <td className="px-4 py-3"><Progress tool={tool} /></td>
               <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{tool.os || '—'}</td>
+              <td className="px-4 py-3 text-center">
+                {tool.aiIntegration ? <span role="img" aria-label="Has AI integration" title="Has AI integration" className="text-lg font-bold text-green-600">✓</span> : <span className="text-gray-400" aria-label="No AI integration">—</span>}
+              </td>
               <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{tool.description || '—'}</td>
             </tr>
           ))}
