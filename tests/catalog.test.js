@@ -107,5 +107,6 @@ test('operating system filter works correctly', async () => {
   assert.ok(windowsTools.every(tool => tool.operatingSystem.includes('Windows')), 'All results should include Windows');
   
   const linuxTools = filterTools(tools, { operatingSystem: 'Linux' });
-  assert.equal(linuxTools.length, 0, 'Should find no tools with Linux currently');
+  assert.ok(linuxTools.length > 0, 'Should find tools with Linux');
+  assert.ok(linuxTools.every(tool => tool.operatingSystem.includes('Linux')), 'All results should include Linux');
 });
