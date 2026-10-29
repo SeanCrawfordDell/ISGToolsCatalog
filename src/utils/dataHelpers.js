@@ -26,6 +26,9 @@ export const filterTools = (tools, filters) => {
     if (filters.operatingSystem && !tool.operatingSystem.includes(filters.operatingSystem)) {
       return false;
     }
+    if (filters.platform && !(tool.platform || []).includes(filters.platform)) {
+      return false;
+    }
     return true;
   });
 };

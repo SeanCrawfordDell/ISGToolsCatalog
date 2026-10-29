@@ -8,6 +8,7 @@ import { githubIssueFormUrl } from '../utils/githubLinks';
 
 const REGION_OPTIONS = ['North America', 'EMEA', 'LATAM', 'ANZ', 'APJ'];
 const OPERATING_SYSTEM_OPTIONS = ['Windows', 'Linux', 'Nutanix', 'Azure Local', 'ESX'];
+const PLATFORM_OPTIONS = ['Server', 'Switch', 'SAN', 'Appliance'];
 
 const Tools = () => {
   const { tools, filteredTools, loading, filters, sortBy, setSortBy, updateFilters, clearFilters } = useTools();
@@ -41,7 +42,7 @@ const Tools = () => {
             
             {/* Search and Filters */}
             <div className="card mb-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Search
@@ -88,6 +89,14 @@ const Tools = () => {
                   <select value={filters.operatingSystem} onChange={(e) => updateFilters({ operatingSystem: e.target.value })} className="input-field">
                     <option value="">All Operating Systems</option>
                     {OPERATING_SYSTEM_OPTIONS.map(os => <option key={os} value={os}>{os}</option>)}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Platform</label>
+                  <select value={filters.platform} onChange={(e) => updateFilters({ platform: e.target.value })} className="input-field">
+                    <option value="">All Platforms</option>
+                    {PLATFORM_OPTIONS.map(platform => <option key={platform} value={platform}>{platform}</option>)}
                   </select>
                 </div>
 
@@ -158,7 +167,7 @@ const Tools = () => {
                 </div>
               </section>
               
-              {(filters.search || filters.status || filters.regionCreated || filters.category || filters.operatingSystem) && (
+              {(filters.search || filters.status || filters.regionCreated || filters.category || filters.operatingSystem || filters.platform) && (
                 <button
                   onClick={clearFilters}
                   className="mt-4 text-sm text-dell-blue hover:underline"

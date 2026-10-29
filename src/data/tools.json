@@ -6,6 +6,11 @@
       "operatingSystem": [
         "Windows"
       ],
+      "platform": [
+        "Server",
+        "Solution",
+        "Switch"
+      ],
       "description": "Central launcher interface for Dell ProSupport utilities and troubleshooting tools.",
       "whatItDoes": "Provides one interface for launching all available Dell ProSupport utilities including log collectors, diagnostic tools, and maintenance scripts for Dell PowerEdge, Windows Server, Hyper-V, and Azure Local environments.",
       "valueProposition": "Simplifies tool access and discovery, reduces time to find the right tool for specific troubleshooting scenarios, and provides a unified entry point for all Dell ProSupport utilities.",

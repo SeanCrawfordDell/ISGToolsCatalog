@@ -60,6 +60,7 @@
       <button class="btn-secondary" onclick="validateCatalog()">Validate</button>
       <button class="btn-secondary" onclick="generatePrompt()">Generate Devin Prompt</button>
       <button class="btn-secondary" onclick="exportJson()">Export JSON</button>
+      <button class="btn-primary" onclick="submitToDevin()">Submit to Devin</button>
     </div>
 
     <div id="status" class="status" style="display: none;"></div>
@@ -95,10 +96,12 @@
           <div class="form-group">
             <label for="status">Status *</label>
             <select id="status" required>
-              <option value="released">Released</option>
+              <option value="planning">Planning</option>
+              <option value="development">Development</option>
+              <option value="testing">Testing</option>
               <option value="internal-testing">Internal Testing</option>
-              <option value="prototype">Prototype</option>
-              <option value="deprecated">Deprecated</option>
+              <option value="released">Released</option>
+              <option value="maintenance">Maintenance</option>
             </select>
           </div>
         </div>
@@ -150,6 +153,11 @@
         </div>
 
         <div class="form-group">
+          <label for="platform">Platform (comma-separated: Server, Switch, SAN, Appliance)</label>
+          <input type="text" id="platform" placeholder="Server, Switch">
+        </div>
+
+        <div class="form-group">
           <label for="repository">Repository URL</label>
           <input type="url" id="repository" placeholder="https://github.com/...">
         </div>
@@ -181,8 +189,8 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="progress">Progress (%)</label>
-            <input type="number" id="progress" min="0" max="100" value="100">
+            <label for="progress">Progress (0-100 or stage label)</label>
+            <input type="text" id="progress" value="100">
           </div>
           <div class="form-group">
             <label for="minutesSavedPerRun">Minutes Saved Per Run</label>
@@ -247,6 +255,8 @@
       event.target.value = '';
     }
 
+    const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
     // Render tools grid
     function renderTools() {
       const grid = document.getElementById('toolsGrid');
@@ -260,16 +270,16 @@
 
       grid.innerHTML = filtered.map(tool => `
         <div class="tool-card">
-          <h3>${tool.name}</h3>
+          <h3>${esc(tool.name)}</h3>
           <div class="meta">
-            <strong>ID:</strong> ${tool.id}<br>
-            <strong>Status:</strong> ${tool.status}<br>
-            <strong>Category:</strong> ${tool.category}<br>
-            <strong>Owner:</strong> ${tool.owner || 'N/A'}
+            <strong>ID:</strong> ${esc(tool.id)}<br>
+            <strong>Status:</strong> ${esc(tool.status)}<br>
+            <strong>Category:</strong> ${esc(tool.category)}<br>
+            <strong>Owner:</strong> ${esc(tool.owner || 'N/A')}
           </div>
           <div class="actions">
-            <button class="btn-primary" onclick="editTool('${tool.id}')">Edit</button>
-            <button class="btn-danger" onclick="deleteTool('${tool.id}')">Delete</button>
+            <button class="btn-primary" data-id="${esc(tool.id)}" onclick="editTool(this.dataset.id)">Edit</button>
+            <button class="btn-danger" data-id="${esc(tool.id)}" onclick="deleteTool(this.dataset.id)">Delete</button>
           </div>
         </div>
       `).join('');
@@ -284,7 +294,7 @@
       document.getElementById('toolForm').reset();
       document.getElementById('editId').value = '';
       document.getElementById('id').value = 'tool-' + String(tools.length + 1).padStart(3, '0');
-      document.getElementById('progress').value = 100;
+      document.getElementById('progress').value = '100';
       document.getElementById('minutesSavedPerRun').value = 30;
       document.getElementById('editModal').classList.add('active');
     }
@@ -310,7 +320,8 @@
       document.getElementById('whatItDoes').value = tool.whatItDoes || '';
       document.getElementById('valueProposition').value = tool.valueProposition || '';
       document.getElementById('tags').value = Array.isArray(tool.tags) ? tool.tags.join(', ') : '';
-      document.getElementById('progress').value = tool.progress || 100;
+      document.getElementById('progress').value = tool.progress ?? 100;
+      document.getElementById('platform').value = Array.isArray(tool.platform) ? tool.platform.join(', ') : '';
       document.getElementById('minutesSavedPerRun').value = tool.minutesSavedPerRun || 30;
       document.getElementById('telemetryName').value = tool.telemetryName || '';
       document.getElementById('instructions').value = tool.instructions || '';
@@ -325,7 +336,11 @@
       const id = document.getElementById('id').value;
       const editId = document.getElementById('editId').value;
       
+      const existing = tools.find(t => t.id === editId) || {};
+      const today = new Date().toISOString().split('T')[0];
+      const progressRaw = document.getElementById('progress').value.trim();
       const tool = {
+        ...existing,
         id: id,
         name: document.getElementById('name').value,
         status: document.getElementById('status').value,
@@ -334,35 +349,30 @@
         team: document.getElementById('team').value,
         regionCreated: document.getElementById('region').value,
         operatingSystem: document.getElementById('operatingSystem').value.split(',').map(s => s.trim()).filter(s => s),
+        platform: document.getElementById('platform').value.split(',').map(s => s.trim()).filter(s => s),
         repository: document.getElementById('repository').value,
         documentation: document.getElementById('documentation').value,
         description: document.getElementById('description').value,
         whatItDoes: document.getElementById('whatItDoes').value,
         valueProposition: document.getElementById('valueProposition').value,
         tags: document.getElementById('tags').value.split(',').map(s => s.trim()).filter(s => s),
-        progress: parseInt(document.getElementById('progress').value) || 100,
+        progress: progressRaw !== '' && Number.isFinite(Number(progressRaw)) ? Number(progressRaw) : (progressRaw || 100),
         minutesSavedPerRun: parseInt(document.getElementById('minutesSavedPerRun').value) || 30,
         telemetryName: document.getElementById('telemetryName').value || document.getElementById('name').value,
-        createdAt: new Date().toISOString().split('T')[0],
-        updatedAt: new Date().toISOString().split('T')[0],
-        roadmap: [{ feature: 'Initial release', status: 'completed', targetDate: new Date().toISOString().split('T')[0], priority: 'high' }]
+        createdAt: existing.createdAt || today,
+        updatedAt: today
       };
+      if (!tool.platform.length) delete tool.platform;
 
       // Add instructions if provided
       const instructions = document.getElementById('instructions').value;
-      if (instructions) {
-        tool.instructions = instructions;
-      }
+      if (instructions) tool.instructions = instructions;
+      else delete tool.instructions;
 
       if (editId) {
         // Update existing
         const index = tools.findIndex(t => t.id === editId);
-        if (index !== -1) {
-          // Preserve createdAt and other fields
-          tool.createdAt = tools[index].createdAt;
-          tool.documentationAnchor = tools[index].documentationAnchor;
-          tools[index] = tool;
-        }
+        if (index !== -1) tools[index] = tool;
       } else {
         // Add new
         tools.push(tool);
@@ -417,13 +427,7 @@
     }
 
     // Generate prompt for Devin
-    function generatePrompt() {
-      const changes = getChanges();
-      if (changes.length === 0) {
-        showStatus('No changes detected', 'error');
-        return;
-      }
-
+    function buildPrompt(changes) {
       let prompt = 'Please make the following changes to the ISG Tools Catalog (src/data/tools.json):\n\n';
       
       changes.forEach(change => {
@@ -457,9 +461,36 @@
       prompt += '2. Run npm test to ensure tests pass\n';
       prompt += '3. Run npm run build to rebuild the docs\n';
       prompt += '4. Commit and push to the EOS git repository';
+      return prompt;
+    }
 
+    function generatePrompt() {
+      const changes = getChanges();
+      if (changes.length === 0) {
+        showStatus('No changes detected', 'error');
+        return null;
+      }
+      const prompt = buildPrompt(changes);
       document.getElementById('promptText').textContent = prompt;
       document.getElementById('promptOutput').style.display = 'block';
+      return { changes, prompt };
+    }
+
+    async function submitToDevin() {
+      const result = generatePrompt();
+      if (!result) return;
+      try {
+        const response = await fetch('/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...result, tools })
+        });
+        if (!response.ok) throw new Error((await response.json()).error || response.statusText);
+        await navigator.clipboard.writeText(result.prompt).catch(() => {});
+        showStatus(`Submitted ${result.changes.length} change(s). Tell Devin: "apply the submitted catalog changes" (prompt also copied to clipboard).`, 'success');
+      } catch (error) {
+        showStatus('Submit failed: ' + error.message + '. Use Copy to Clipboard and paste the prompt to Devin.', 'error');
+      }
     }
 
     // Get changes between original and current
@@ -474,7 +505,7 @@
           changes.push({ type: 'add', tool });
         } else {
           const diff = {};
-          const fields = ['name', 'status', 'category', 'owner', 'team', 'description', 'repository', 'documentation', 'operatingSystem', 'tags', 'progress', 'minutesSavedPerRun', 'telemetryName', 'instructions'];
+          const fields = ['name', 'status', 'category', 'owner', 'team', 'regionCreated', 'description', 'whatItDoes', 'valueProposition', 'repository', 'documentation', 'operatingSystem', 'platform', 'tags', 'progress', 'minutesSavedPerRun', 'telemetryName', 'instructions'];
           fields.forEach(field => {
             const currentVal = Array.isArray(tool[field]) ? JSON.stringify(tool[field]) : tool[field];
             const originalVal = Array.isArray(original[field]) ? JSON.stringify(original[field]) : original[field];
@@ -526,7 +557,7 @@
       status.style.display = 'block';
       setTimeout(() => {
         status.style.display = 'none';
-      }, 5000);
+      }, 12000);
     }
 
     // Load tools on page load

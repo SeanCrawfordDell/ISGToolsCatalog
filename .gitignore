@@ -34,3 +34,6 @@ graphify-out/
 /data/
 /public/assets/
 /public/data/
+
+# Local editor submissions
+tools-editor/submitted-changes.json
