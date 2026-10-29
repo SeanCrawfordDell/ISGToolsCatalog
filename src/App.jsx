@@ -5,6 +5,7 @@ import ToolDetail from './pages/ToolDetail';
 import Requests from './pages/Requests';
 import Admin from './pages/Admin';
 import Reports from './pages/Reports';
+import Portfolio from './pages/Portfolio';
 import AISkills from './pages/AISkills';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/requests" element={<Requests />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/reports/portfolio" element={<Portfolio />} />
       </Routes>
     </Router>
   );

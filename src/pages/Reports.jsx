@@ -3,6 +3,7 @@ import { Chart } from 'react-chartjs-2';
 import 'chart.js/auto';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import ReportsNav from '../components/reports/ReportsNav';
 import { useTools } from '../hooks/useTools';
 import { getToolTelemetry } from '../services/telemetryApi';
 import { createEndpointPreservingTickCallback } from '../utils/chartTicks';
@@ -168,6 +169,7 @@ const Reports = () => {
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Telemetry Reports</h1>
             <p className="mt-2 text-gray-600 dark:text-gray-400">Tool adoption, estimated impact, and telemetry storage coverage.</p>
           </div>
+          <ReportsNav />
 
           <section className="card mb-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
