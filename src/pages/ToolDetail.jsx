@@ -261,24 +261,7 @@ const ToolDetail = () => {
     );
   }
 
-  const getRoadmapStatusColor = (status) => {
-    const colors = {
-      planned: 'border-l-4 border-gray-400',
-      'in-progress': 'border-l-4 border-blue-500',
-      completed: 'border-l-4 border-green-500',
-      cancelled: 'border-l-4 border-red-500'
-    };
-    return colors[status] || 'border-l-4 border-gray-400';
-  };
 
-  const getPriorityColor = (priority) => {
-    const colors = {
-      low: 'text-gray-500',
-      medium: 'text-yellow-600',
-      high: 'text-red-600'
-    };
-    return colors[priority] || 'text-gray-500';
-  };
 
 
   return (
@@ -386,40 +369,6 @@ const ToolDetail = () => {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Roadmap
-                </h2>
-                <div className="space-y-4">
-                  {tool.roadmap.map((item, index) => (
-                    <div
-                      key={index}
-                      className={`p-4 bg-gray-50 dark:bg-gray-700 rounded ${getRoadmapStatusColor(item.status)}`}
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
-                          {item.feature}
-                        </h3>
-                        <span className={`text-sm font-medium ${getPriorityColor(item.priority)}`}>
-                          {item.priority}
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400">
-                        <span className={`px-2 py-1 rounded text-xs ${
-                          item.status === 'completed' ? 'bg-green-100 text-green-800' :
-                          item.status === 'in-progress' ? 'bg-blue-100 text-blue-800' :
-                          item.status === 'cancelled' ? 'bg-red-100 text-red-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {item.status}
-                        </span>
-                        {item.targetDate && (
-                          <span>Target: {formatDate(item.targetDate)}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-700 rounded">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                     Timeline

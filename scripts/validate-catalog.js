@@ -19,7 +19,7 @@ try {
     if (!validProgress) throw new Error(`${tool.id}: progress must be 0–100 or a non-empty stage label`);
     if (!Number.isFinite(tool.minutesSavedPerRun) || tool.minutesSavedPerRun < 0) throw new Error(`${tool.id}: invalid minutesSavedPerRun`);
     if (!Array.isArray(tool.operatingSystem) || !tool.operatingSystem.length || !tool.operatingSystem.every(os => typeof os === 'string' && os.trim())) throw new Error(`${tool.id}: operatingSystem must be a non-empty array of strings`);
-    if (!Array.isArray(tool.tags) || !tool.tags.every(tag => typeof tag === 'string') || !Array.isArray(tool.roadmap)) throw new Error(`${tool.id}: tags and roadmap must be arrays`);
+    if (!Array.isArray(tool.tags) || !tool.tags.every(tag => typeof tag === 'string')) throw new Error(`${tool.id}: tags must be an array of strings`);
     const tagLower = new Set();
     for (const tag of tool.tags) {
       if (tagLower.has(tag.toLowerCase())) throw new Error(`${tool.id}: duplicate tag (case-insensitive): ${tag}`);
