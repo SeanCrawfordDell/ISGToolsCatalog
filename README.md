@@ -34,6 +34,8 @@ Set `VITE_PUBLIC_BASE=/Sean-Crawford/ISGToolsCatalog/` when building for EOS Git
 4. Commit source changes and the regenerated `docs/` together.
 5. Review and merge through the normal repository workflow. EOS GitHub Pages publishes the configured branch's `/docs` output.
 
+The build also publishes the catalog unchanged as `docs/tools.json`. The ProSupportTSA Tool Portfolio page reads that file from the same Pages host each time it opens, so its owners, statuses and tools match whatever the catalog currently shows once `docs/` is rebuilt and published.
+
 Do not manually edit `docs/`, put compiled JavaScript under `public/`, or restore the old root `assets/`, root `data/`, or `dist/` folders. Vite copies `public/` into the build; it should contain only static assets such as `favicon.svg`.
 
 ## Requests and catalog updates
