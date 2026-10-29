@@ -692,7 +692,7 @@
       "valueProposition": "Investigating Windows Update failures often requires engineers to manually review large volumes of CBS, DISM, Windows Update, Event Viewer, and TSS log data. Identifying the actual failed transaction and separating true installation failures from unrelated scan, download, metadata, or communication errors can be both time-consuming and error-prone.\n\nDevin Windows Update Investigator significantly reduces this effort by automatically collecting relevant evidence, correlating events across multiple log sources, and producing a structured, evidence-based root cause analysis.\n\nBy standardizing the investigation process, the tool helps:\n\n- Reduce analysis time\n- Improve investigation consistency\n- Accelerate issue resolution\n- Minimize manual log review\n- Deliver clear, evidence-backed remediation guidance\n\nThe solution is designed for:\n\n- Technical Support Engineers\n- Escalation Engineers\n- Windows Administrators\n- Supportability Teams\n- Windows Server Specialists\n- Customer Success and Operations Teams\n\nIts primary goal is to help engineers move from log collection to root cause identification faster, with greater accuracy and consistency than traditional manual investigation methods.",
       "status": "internal-testing",
       "progress": "Working Prototype",
-      "owner": "APJ Microsoft Team",
+      "owner": "Mujibur.Rahman@dell.com",
       "team": "APJ Microsoft Team",
       "repository": "",
       "documentation": "",
